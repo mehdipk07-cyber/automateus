@@ -11,6 +11,7 @@ const geist = Geist({
 });
 
 export const metadata = {
+  metadataBase: new URL("https://automate-us.vercel.app"),
   title: {
     default: "AutomateUs | Custom Automation Agency",
     template: "%s | AutomateUs",
@@ -35,8 +36,58 @@ export const metadata = {
       "We build custom automations that eliminate manual tasks, reduce operational costs, and help your team focus on high-value work.",
     type: "website",
     locale: "en_US",
+    url: "https://automate-us.vercel.app",
+    siteName: "AutomateUs",
+    images: [
+      {
+        url: "/logo.jpg",
+        width: 1200,
+        height: 630,
+        alt: "AutomateUs — Custom Automation Agency",
+      },
+    ],
   },
-  robots: { index: true, follow: true },
+  twitter: {
+    card: "summary_large_image",
+    title: "AutomateUs | Custom Automation Agency",
+    description:
+      "We build custom automations that eliminate manual tasks, reduce operational costs, and help your team focus on high-value work.",
+    images: ["/logo.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large" },
+  },
+  alternates: { canonical: "https://automate-us.vercel.app" },
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "AutomateUs",
+  url: "https://automate-us.vercel.app",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: { "@type": "EntryPoint", urlTemplate: "https://automate-us.vercel.app/blog?q={search_term_string}" },
+    "query-input": "required name=search_term_string",
+  },
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "AutomateUs",
+  url: "https://automate-us.vercel.app",
+  logo: "https://automate-us.vercel.app/logo.jpg",
+  description:
+    "AutomateUs helps businesses eliminate repetitive tasks and streamline operations through custom automation solutions using Make.com, Zapier, Monday.com, and AI.",
+  email: "alihassankhaliq20@gmail.com",
+  telephone: "+923049814394",
+  sameAs: [],
+  serviceType: "Business Process Automation",
+  areaServed: "Worldwide",
+  priceRange: "$$",
 };
 
 export default function RootLayout({ children }) {
@@ -47,7 +98,15 @@ export default function RootLayout({ children }) {
       data-scroll-behavior="smooth"
     >
       <body className="min-h-screen antialiased flex flex-col bg-background text-foreground">
-        {/* Skip to content — Nielsen heuristic: flexibility & efficiency */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        {/* Skip to content */}
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-brand-600 focus:text-white focus:font-semibold focus:text-sm"

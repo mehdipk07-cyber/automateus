@@ -1,8 +1,9 @@
 "use client";
 
+import Link from "next/link";
+import { ArrowRight, MessageCircle } from "lucide-react";
 import { FadeUp } from "@/components/AnimatedSection";
-import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import {
   Accordion,
   AccordionItem,
@@ -47,34 +48,78 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <section id="faq" className="py-24 lg:py-32 bg-surface-800/30">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <FadeUp className="text-center mb-16">
-          <Badge variant="outline" className="mb-4 border-brand-500/20 bg-brand-500/10 px-3 py-1 text-xs tracking-widest text-brand-400 uppercase">
-            FAQ
-          </Badge>
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-            Common Questions
-          </h2>
-          <p className="text-gray-400 text-lg">Everything you need to know before getting started.</p>
-        </FadeUp>
+    <section id="faq" className="py-24 lg:py-32" style={{ background: "var(--surface-800)" }}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+          {/* Left: heading */}
+          <FadeUp className="lg:col-span-4 lg:sticky lg:top-28">
+            <span
+              className="inline-block px-3 py-1 rounded-md border text-xs font-bold uppercase tracking-widest mb-5"
+              style={{
+                color: "var(--brand-400)",
+                borderColor: "rgba(99,102,241,0.2)",
+                background: "rgba(99,102,241,0.08)",
+              }}
+            >
+              FAQ
+            </span>
+            <h2
+              className="text-4xl lg:text-5xl font-bold leading-tight mb-5"
+              style={{ color: "var(--text-primary)" }}
+            >
+              Common{" "}
+              <span className="gradient-text">Questions</span>
+            </h2>
+            <p className="text-lg leading-relaxed mb-10" style={{ color: "var(--text-secondary)" }}>
+              Everything you need to know before getting started. Still have questions? We&apos;re here to help.
+            </p>
+            <Button
+              variant="outline"
+              size="lg"
+              className="h-auto px-6 py-3.5"
+              render={<Link href="/contact" />}
+            >
+              <MessageCircle className="size-4" />
+              Ask us anything
+              <ArrowRight className="size-4" />
+            </Button>
+          </FadeUp>
 
-        <FadeUp>
-          <Card className="rounded-lg px-8 ring-0 border border-border">
-            <Accordion multiple>
-              {faqs.map((faq, i) => (
-                <AccordionItem key={faq.q} value={i}>
-                  <AccordionTrigger className="text-white text-base py-5">
-                    {faq.q}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-gray-400 leading-relaxed pb-5">
-                    {faq.a}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </Card>
-        </FadeUp>
+          {/* Right: accordion */}
+          <FadeUp className="lg:col-span-8">
+            <div
+              className="rounded-2xl overflow-hidden divide-y"
+              style={{
+                background: "var(--surface-card)",
+                border: "1px solid var(--border)",
+                divideColor: "var(--border)",
+              }}
+            >
+              <Accordion multiple>
+                {faqs.map((faq, i) => (
+                  <AccordionItem
+                    key={faq.q}
+                    value={i}
+                    style={{ borderColor: "var(--border)" }}
+                  >
+                    <AccordionTrigger
+                      className="px-7 py-5 text-left font-medium hover:no-underline"
+                      style={{ color: "var(--text-primary)" }}
+                    >
+                      {faq.q}
+                    </AccordionTrigger>
+                    <AccordionContent
+                      className="px-7 pb-6 leading-relaxed text-sm"
+                      style={{ color: "var(--text-secondary)" }}
+                    >
+                      {faq.a}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+          </FadeUp>
+        </div>
       </div>
     </section>
   );

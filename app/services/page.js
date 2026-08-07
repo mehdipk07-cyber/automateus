@@ -10,6 +10,31 @@ export const metadata = {
   title: "Services | Workflow, AI & CRM Automation",
   description:
     "Explore AutomateUs's full range of automation services — from workflow and AI automation to Monday.com, Make.com, Zapier, CRM, and custom API integrations.",
+  keywords: [
+    "automation services",
+    "workflow automation agency",
+    "AI automation services",
+    "CRM automation",
+    "Monday.com setup",
+    "Make.com automation",
+    "Zapier experts",
+    "custom API integration",
+    "business process automation",
+  ],
+  alternates: { canonical: "https://automate-us.vercel.app/services" },
+  openGraph: {
+    title: "Services | Workflow, AI & CRM Automation — AutomateUs",
+    description:
+      "Explore AutomateUs's full range of automation services — from workflow and AI automation to Monday.com, Make.com, Zapier, CRM, and custom API integrations.",
+    url: "https://automate-us.vercel.app/services",
+    images: [{ url: "/logo.jpg", width: 1200, height: 630, alt: "AutomateUs Services" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Services | Workflow, AI & CRM Automation — AutomateUs",
+    description: "Explore AutomateUs's full range of automation services — from workflow and AI automation to Monday.com, Make.com, Zapier, CRM, and custom API integrations.",
+    images: ["/logo.jpg"],
+  },
 };
 
 const services = [
@@ -200,9 +225,31 @@ const services = [
   },
 ];
 
+const servicesSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "AutomateUs Services",
+  url: "https://automate-us.vercel.app/services",
+  itemListElement: services.map((s, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    item: {
+      "@type": "Service",
+      name: s.title,
+      description: s.tagline,
+      provider: { "@type": "Organization", name: "AutomateUs", url: "https://automate-us.vercel.app" },
+      url: `https://automate-us.vercel.app/services#${s.id}`,
+    },
+  })),
+};
+
 export default function ServicesPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}
+      />
       {/* Hero — animation: pulsing glow on CTA button */}
       <section className="relative pt-32 pb-20 border-b" style={{ borderColor: "var(--border)" }}>
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

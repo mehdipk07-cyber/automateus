@@ -11,6 +11,27 @@ export const metadata = {
   title: "Case Studies | Real Automation Results",
   description:
     "See how AutomateUs has helped businesses save thousands of hours, reduce costs, and scale operations with custom automation solutions.",
+  keywords: [
+    "automation case studies",
+    "automation results",
+    "workflow automation ROI",
+    "business automation examples",
+    "automation success stories",
+    "time saved with automation",
+  ],
+  alternates: { canonical: "https://automate-us.vercel.app/case-studies" },
+  openGraph: {
+    title: "Case Studies | Real Automation Results — AutomateUs",
+    description: "See how AutomateUs has helped businesses save thousands of hours, reduce costs, and scale operations with custom automation solutions.",
+    url: "https://automate-us.vercel.app/case-studies",
+    images: [{ url: "/logo.jpg", width: 1200, height: 630, alt: "AutomateUs Case Studies" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Case Studies | Real Automation Results — AutomateUs",
+    description: "See how AutomateUs has helped businesses save thousands of hours, reduce costs, and scale operations with custom automation solutions.",
+    images: ["/logo.jpg"],
+  },
 };
 
 const caseStudies = [

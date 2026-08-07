@@ -11,6 +11,26 @@ export const metadata = {
   title: "About | AutomateUs Automation Agency",
   description:
     "Learn about AutomateUs — our mission, values, and why hundreds of businesses trust us to build their automation systems.",
+  keywords: [
+    "about AutomateUs",
+    "automation agency team",
+    "business automation company",
+    "workflow automation experts",
+    "automation consulting firm",
+  ],
+  alternates: { canonical: "https://automate-us.vercel.app/about" },
+  openGraph: {
+    title: "About AutomateUs — Custom Automation Agency",
+    description: "Learn about AutomateUs — our mission, values, and why hundreds of businesses trust us to build their automation systems.",
+    url: "https://automate-us.vercel.app/about",
+    images: [{ url: "/logo.jpg", width: 1200, height: 630, alt: "About AutomateUs" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About AutomateUs — Custom Automation Agency",
+    description: "Learn about AutomateUs — our mission, values, and why hundreds of businesses trust us to build their automation systems.",
+    images: ["/logo.jpg"],
+  },
 };
 
 const values = [

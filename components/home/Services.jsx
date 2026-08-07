@@ -1,125 +1,159 @@
-﻿import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import { FadeUp, StaggerChildren, StaggerItem } from "@/components/AnimatedSection";
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import Link from "next/link";
+import { ArrowRight, Workflow, Bot, Users, LayoutGrid, BarChart3, Plug } from "lucide-react";
+import { FadeUp } from "@/components/AnimatedSection";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 const services = [
   {
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-        <path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    ),
+    icon: Workflow,
     title: "Workflow Automation",
     desc: "Automate complex multi-step processes across your entire business stack — eliminating bottlenecks and human error.",
     href: "/services#workflow",
-    tag: "Most Popular",
+    highlighted: true,
   },
   {
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-        <path d="M12 2a4 4 0 014 4v1h1a3 3 0 010 6h-1v1a4 4 0 01-8 0v-1H7a3 3 0 010-6h1V6a4 4 0 014-4z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    ),
+    icon: Bot,
     title: "AI Automation",
-    desc: "Integrate large language models and AI tools into your workflows for smarter, faster, and more accurate operations.",
+    desc: "Integrate LLMs and AI tools into your workflows for smarter, faster operations.",
     href: "/services#ai",
-    tag: "Trending",
   },
   {
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-        <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    ),
+    icon: Users,
     title: "CRM Automation",
-    desc: "Automate lead capture, nurture sequences, follow-ups, and customer lifecycle management inside your CRM.",
+    desc: "Automate lead capture, nurture sequences, follow-ups, and customer lifecycle management.",
     href: "/services#crm",
   },
   {
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-        <rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" strokeWidth="1.8"/>
-        <path d="M9 9h6M9 13h4M9 17h2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
-      </svg>
-    ),
+    icon: LayoutGrid,
     title: "Monday.com Solutions",
-    desc: "Build powerful Monday.com boards, automations, and integrations that keep your projects running on autopilot.",
+    desc: "Build powerful boards, automations, and integrations that keep projects on autopilot.",
     href: "/services#monday",
   },
   {
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-        <path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    ),
+    icon: BarChart3,
     title: "Reporting Automation",
-    desc: "Generate accurate, real-time dashboards and reports automatically — without anyone touching a spreadsheet.",
+    desc: "Generate accurate, real-time dashboards and reports automatically — no spreadsheets.",
     href: "/services#reporting",
   },
   {
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-        <path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
-    ),
+    icon: Plug,
     title: "Custom Integrations",
-    desc: "Connect any software with custom API integrations — making your entire tech stack work as a unified system.",
+    desc: "Connect any software with custom API integrations — one unified system.",
     href: "/services#integrations",
   },
 ];
+
+function ServiceCard({ service }) {
+  return (
+    <Link href={service.href} className="group block">
+      <div
+        className={cn(
+          "h-full p-8 rounded-2xl transition-all duration-300 flex flex-col gap-5",
+          service.highlighted
+            ? "text-white shadow-2xl shadow-brand-500/20"
+            : "border border-border hover:border-brand-500/40 hover:shadow-lg hover:shadow-brand-500/5"
+        )}
+        style={
+          service.highlighted
+            ? { background: "linear-gradient(135deg, #6366f1 0%, #4f46e5 60%, #4338ca 100%)" }
+            : { background: "var(--surface-card)" }
+        }
+      >
+        <div
+          className={cn(
+            "w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0",
+            service.highlighted ? "bg-white/20" : "bg-brand-500/10 border border-brand-500/20"
+          )}
+        >
+          <service.icon
+            className={cn("size-5", service.highlighted ? "text-white" : "text-brand-400")}
+          />
+        </div>
+        <div className="flex-1">
+          <h3
+            className={cn(
+              "font-semibold text-lg mb-2 group-hover:text-brand-200 transition-colors",
+              service.highlighted ? "text-white group-hover:text-white" : ""
+            )}
+            style={service.highlighted ? {} : { color: "var(--text-primary)" }}
+          >
+            {service.title}
+          </h3>
+          <p
+            className="text-sm leading-relaxed"
+            style={{ color: service.highlighted ? "rgba(255,255,255,0.75)" : "var(--text-muted)" }}
+          >
+            {service.desc}
+          </p>
+        </div>
+        <div
+          className={cn(
+            "flex items-center gap-1 text-sm font-medium",
+            service.highlighted ? "text-white/80" : "text-brand-400 opacity-0 group-hover:opacity-100 transition-opacity"
+          )}
+        >
+          Learn more <ArrowRight className="size-3.5 group-hover:translate-x-0.5 transition-transform" />
+        </div>
+      </div>
+    </Link>
+  );
+}
 
 export default function Services() {
   return (
     <section id="services" className="py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <FadeUp className="text-center mb-16">
-          <Badge variant="outline" className="mb-4 border-brand-500/20 bg-brand-500/10 px-3 py-1 text-xs tracking-widest text-brand-400 uppercase">
-            What We Do
-          </Badge>
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-            End-to-End Automation Services
-          </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            From simple task automations to complex AI-powered workflows — we cover every layer of your operations.
-          </p>
-        </FadeUp>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+          {/* Left: heading + CTA */}
+          <FadeUp className="lg:col-span-4 lg:sticky lg:top-28">
+            <span
+              className="inline-block px-3 py-1 rounded-md border text-xs font-bold uppercase tracking-widest mb-5"
+              style={{ color: "var(--text-muted)", borderColor: "var(--border)" }}
+            >
+              What We Do
+            </span>
+            <h2
+              className="text-4xl lg:text-5xl font-bold leading-tight tracking-tight mb-5"
+              style={{ color: "var(--text-primary)" }}
+            >
+              End-to-End{" "}
+              <span className="gradient-text">Automation</span>{" "}
+              Services
+            </h2>
+            <p className="text-lg leading-relaxed mb-10" style={{ color: "var(--text-secondary)" }}>
+              From simple task automations to complex AI-powered workflows — we cover every layer
+              of your operations so you can focus on growth.
+            </p>
+            <div className="flex flex-col sm:flex-row lg:flex-col gap-3">
+              <Button
+                size="lg"
+                className="h-auto px-7 py-3.5 font-semibold shadow-lg shadow-brand-500/20"
+                render={<Link href="/contact" />}
+              >
+                Start Automating
+                <ArrowRight className="size-4" />
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="h-auto px-7 py-3.5"
+                render={<Link href="/services" />}
+              >
+                View All Services
+              </Button>
+            </div>
+          </FadeUp>
 
-        <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((s) => (
-            <StaggerItem key={s.title}>
-              <Link href={s.href} className="group block h-full">
-                <Card className="relative h-full rounded-lg p-7 ring-0 border border-border hover:border-brand-500/30 hover:bg-brand-500/5 transition-all duration-300">
-                  {s.tag && (
-                    <Badge className="absolute top-5 right-5 bg-accent-500/20 text-accent-400 border border-accent-500/20">
-                      {s.tag}
-                    </Badge>
-                  )}
-                  <div className="w-12 h-12 rounded-xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-brand-400 mb-5 group-hover:bg-brand-500/20 group-hover:text-brand-300 transition-all">
-                    {s.icon}
-                  </div>
-                  <h3 className="text-white font-semibold text-lg mb-2 group-hover:text-brand-200 transition-colors">
-                    {s.title}
-                  </h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{s.desc}</p>
-                  <div className="mt-5 flex items-center gap-1 text-brand-400 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-                    Learn more
-                    <ArrowRight className="size-3.5" />
-                  </div>
-                </Card>
-              </Link>
-            </StaggerItem>
-          ))}
-        </StaggerChildren>
-
-        <FadeUp delay={0.2} className="text-center mt-12">
-          <Button variant="outline" size="lg" className="h-auto px-7 py-3.5" render={<Link href="/services" />}>
-            View All Services
-            <ArrowRight className="size-4" />
-          </Button>
-        </FadeUp>
+          {/* Right: service cards grid */}
+          <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {services.map((service, i) => (
+              <FadeUp key={service.title} delay={i * 0.07}>
+                <ServiceCard service={service} />
+              </FadeUp>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

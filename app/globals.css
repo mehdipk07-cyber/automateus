@@ -133,6 +133,8 @@
 
 html { scroll-behavior: smooth; }
 
+button, [role="button"], select, label[for] { cursor: pointer; }
+
 body {
   color: var(--text-primary);
   font-family: var(--font-geist-sans), system-ui, sans-serif;
@@ -144,11 +146,40 @@ body {
 /* ─── Utilities ─────────────────────────────────────────────── */
 
 .gradient-text {
-  color: var(--brand-500);
+  background: linear-gradient(135deg, #818cf8 0%, #6366f1 40%, #34d399 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .gradient-text-green {
-  color: var(--accent-500);
+  background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glow orb blur blobs */
+.glow-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+/* Bento card hover glow */
+.bento-card {
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.bento-card:hover {
+  border-color: rgba(99,102,241,0.4);
+  box-shadow: 0 0 40px rgba(99,102,241,0.08);
+}
+
+/* Noise texture overlay */
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50%       { opacity: 0.8; transform: scale(1.05); }
 }
 
 /* ─── Scrollbar ─────────────────────────────────────────────── */
@@ -173,11 +204,23 @@ body {
   animation: marquee 40s linear infinite;
   will-change: transform;
 }
-.marquee-track:hover { animation-play-state: paused; }
+.marquee-track-reverse {
+  display: flex;
+  width: max-content;
+  animation: marquee-reverse 36s linear infinite;
+  will-change: transform;
+}
+.marquee-track:hover,
+.marquee-track-reverse:hover { animation-play-state: paused; }
 .marquee-mask {
   overflow: hidden;
   -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
   mask-image:         linear-gradient(90deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
+}
+
+@keyframes marquee-reverse {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
 }
 
 /* ─── Float ──────────────────────────────────────────────────── */

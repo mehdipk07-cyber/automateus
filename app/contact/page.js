@@ -1,144 +1,251 @@
-﻿import { Mail, Phone, Clock, Calendar } from "lucide-react";
+import {
+  Mail, Phone, Clock, Calendar, Copy, MapPin,
+  ArrowRight, CheckCircle2,
+} from "lucide-react";
 import ContactForm from "@/components/contact/ContactForm";
+import ContactSidebar from "@/components/contact/ContactSidebar";
 import { FadeUp } from "@/components/AnimatedSection";
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 
 export const metadata = {
   title: "Contact | Book a Free Automation Consultation",
   description:
     "Book a free 30-minute discovery call with AutomateUs. Tell us about your processes and we'll show you exactly how automation can save your team time and money.",
+  keywords: [
+    "book automation consultation",
+    "free automation discovery call",
+    "contact AutomateUs",
+    "automation agency contact",
+    "hire automation expert",
+  ],
+  alternates: { canonical: "https://automate-us.vercel.app/contact" },
+  openGraph: {
+    title: "Book a Free Automation Consultation — AutomateUs",
+    description: "Book a free 30-minute discovery call with AutomateUs. Tell us about your processes and we'll show you exactly how automation can save your team time and money.",
+    url: "https://automate-us.vercel.app/contact",
+    images: [{ url: "/logo.jpg", width: 1200, height: 630, alt: "Contact AutomateUs" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Book a Free Automation Consultation — AutomateUs",
+    description: "Book a free 30-minute discovery call with AutomateUs. Tell us about your processes and we'll show you exactly how automation can save your team time and money.",
+    images: ["/logo.jpg"],
+  },
 };
+
+const steps = [
+  {
+    n: "01",
+    title: "We review your submission",
+    body: "Our team reads every submission carefully. Within 1 business day we prepare specific questions and automation ideas for your call.",
+  },
+  {
+    n: "02",
+    title: "Discovery call scheduled",
+    body: "We confirm a 30–45 min video call at a time that works for you — no agenda-free calls, we come prepared.",
+  },
+  {
+    n: "03",
+    title: "Custom automation roadmap",
+    body: "After the call, we deliver a prioritized roadmap with estimated time savings, tool recommendations, and implementation cost.",
+  },
+];
 
 export default function ContactPage() {
   return (
-    <>
-      {/* Hero */}
-      <section className="relative pt-32 pb-16 border-b" style={{ borderColor: "var(--border)" }}>
-        <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <FadeUp>
-            <Badge variant="outline" className="mb-6 border-brand-500/20 bg-brand-500/10 px-3 py-1 text-xs tracking-widest text-brand-400 uppercase">
-              Get In Touch
-            </Badge>
-            <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6">
-              Let&apos;s Build Your{" "}
-              <span className="gradient-text">Automation System</span>
-            </h1>
-            <p className="text-xl text-gray-400 max-w-xl mx-auto">
-              Tell us about your business and we&apos;ll show you exactly how automation can eliminate your manual work.
-            </p>
-          </FadeUp>
-        </div>
-      </section>
+    <main
+      className="min-h-screen relative overflow-hidden"
+      style={{ background: "var(--surface-800)" }}
+    >
+      {/* Ambient blobs */}
+      <div
+        className="absolute top-0 left-0 w-[600px] h-[600px] pointer-events-none"
+        style={{
+          background: "radial-gradient(ellipse, rgba(99,102,241,0.10) 0%, transparent 70%)",
+          filter: "blur(80px)",
+        }}
+      />
+      <div
+        className="absolute bottom-0 right-0 w-[500px] h-[500px] pointer-events-none"
+        style={{
+          background: "radial-gradient(ellipse, rgba(52,211,153,0.07) 0%, transparent 70%)",
+          filter: "blur(80px)",
+        }}
+      />
 
-      {/* Content */}
-      <section className="py-12 pb-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
-          {/* Form */}
-          <div className="lg:col-span-3">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-28">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+
+          {/* ── LEFT: Info panel ── */}
+          <FadeUp className="lg:sticky lg:top-28 space-y-10">
+
+            {/* Heading block */}
+            <div>
+              <div
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold uppercase tracking-widest mb-6"
+                style={{
+                  background: "rgba(99,102,241,0.08)",
+                  border: "1px solid rgba(99,102,241,0.2)",
+                  color: "var(--brand-400)",
+                }}
+              >
+                <span
+                  className="w-1.5 h-1.5 rounded-full"
+                  style={{ background: "var(--brand-400)" }}
+                />
+                Free Consultation
+              </div>
+
+              <h1
+                className="text-4xl lg:text-5xl font-bold leading-tight mb-5"
+                style={{ color: "var(--text-primary)" }}
+              >
+                Let&apos;s Build Your{" "}
+                <span className="gradient-text">Automation System</span>
+              </h1>
+
+              <p
+                className="text-lg leading-relaxed"
+                style={{ color: "var(--text-secondary)" }}
+              >
+                Tell us about your business and we&apos;ll map out exactly which
+                manual processes to automate first — and how much time you&apos;ll save.
+              </p>
+            </div>
+
+            {/* Availability pill */}
+            <div
+              className="inline-flex items-center gap-3 px-4 py-2.5 rounded-xl"
+              style={{
+                background: "rgba(16,185,129,0.06)",
+                border: "1px solid rgba(16,185,129,0.2)",
+              }}
+            >
+              <div className="relative flex-shrink-0">
+                <span
+                  className="ping-dot relative inline-flex w-2.5 h-2.5 rounded-full"
+                  style={{ background: "#34d399", color: "#34d399" }}
+                />
+              </div>
+              <div>
+                <span
+                  className="text-sm font-semibold"
+                  style={{ color: "var(--accent-400)" }}
+                >
+                  Currently Accepting Clients
+                </span>
+                <span
+                  className="text-xs ml-2"
+                  style={{ color: "var(--text-muted)" }}
+                >
+                  · Responds within 1 business day
+                </span>
+              </div>
+            </div>
+
+            {/* Contact info cards */}
+            <ContactSidebar />
+
+            {/* What happens next */}
+            <div>
+              <p
+                className="text-xs uppercase tracking-widest font-semibold mb-5"
+                style={{ color: "var(--text-muted)" }}
+              >
+                What happens next
+              </p>
+              <div className="space-y-0">
+                {steps.map((step, i) => (
+                  <div key={step.n} className="flex gap-4">
+                    {/* Step number + connecting line */}
+                    <div className="flex flex-col items-center">
+                      <div
+                        className="w-9 h-9 rounded-xl flex items-center justify-center text-xs font-bold flex-shrink-0"
+                        style={{
+                          background: "rgba(99,102,241,0.12)",
+                          border: "1px solid rgba(99,102,241,0.25)",
+                          color: "var(--brand-400)",
+                        }}
+                      >
+                        {step.n}
+                      </div>
+                      {i < steps.length - 1 && (
+                        <div
+                          className="w-px flex-1 my-1"
+                          style={{ background: "rgba(99,102,241,0.15)", minHeight: "28px" }}
+                        />
+                      )}
+                    </div>
+                    <div className="pb-6">
+                      <p
+                        className="font-semibold text-sm mb-1"
+                        style={{ color: "var(--text-primary)" }}
+                      >
+                        {step.title}
+                      </p>
+                      <p
+                        className="text-sm leading-relaxed"
+                        style={{ color: "var(--text-muted)" }}
+                      >
+                        {step.body}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Testimonial */}
+            <div
+              className="rounded-2xl p-6"
+              style={{
+                background: "rgba(255,255,255,0.02)",
+                border: "1px solid rgba(255,255,255,0.07)",
+              }}
+            >
+              <div className="flex gap-0.5 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} width="14" height="14" viewBox="0 0 14 14" fill="#f59e0b">
+                    <path d="M7 1l1.545 3.13 3.455.503-2.5 2.437.59 3.43L7 8.885l-3.09 1.625.59-3.43L2 4.633l3.455-.503z" />
+                  </svg>
+                ))}
+              </div>
+              <p
+                className="text-sm leading-relaxed italic mb-4"
+                style={{ color: "var(--text-secondary)" }}
+              >
+                &ldquo;The discovery call alone was worth it. They identified automations
+                we hadn&apos;t even thought of and gave us a clear picture of how to
+                save 15+ hours per week.&rdquo;
+              </p>
+              <div className="flex items-center gap-3">
+                <div
+                  className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold text-white flex-shrink-0"
+                  style={{ background: "linear-gradient(135deg,#6366f1,#4f46e5)" }}
+                >
+                  E
+                </div>
+                <div>
+                  <p
+                    className="text-sm font-semibold"
+                    style={{ color: "var(--text-primary)" }}
+                  >
+                    Emma Walsh
+                  </p>
+                  <p className="text-xs" style={{ color: "var(--text-muted)" }}>
+                    Operations Manager, BrightPath Agency
+                  </p>
+                </div>
+              </div>
+            </div>
+          </FadeUp>
+
+          {/* ── RIGHT: Form ── */}
+          <div>
             <ContactForm />
           </div>
 
-          {/* Info sidebar */}
-          <div className="lg:col-span-2 space-y-6">
-            {/* Page animation: pulsing availability indicator */}
-            <FadeUp>
-              <div
-                className="rounded-lg p-5 flex items-center gap-4"
-                style={{ background: "rgba(16,185,129,0.08)", border: "1px solid rgba(16,185,129,0.2)" }}
-              >
-                <div className="relative flex-shrink-0">
-                  <span className="ping-dot relative inline-flex w-3 h-3 rounded-full bg-emerald-400" style={{ color: "#34d399" }} />
-                </div>
-                <div>
-                  <div className="text-emerald-400 font-semibold text-sm">Currently Accepting Clients</div>
-                  <div className="text-gray-500 text-xs mt-0.5">Responding within 1 business day</div>
-                </div>
-              </div>
-            </FadeUp>
-
-            <FadeUp delay={0.1}>
-              <Card className="rounded-lg p-7 ring-0 border border-border">
-                <h3 className="text-white font-bold text-lg mb-4">What Happens Next?</h3>
-                <ol className="space-y-4">
-                  {[
-                    { n: "1", t: "We review your submission", d: "Within 1 business day, our team reviews your details and prepares for your call." },
-                    { n: "2", t: "Discovery call scheduled", d: "We confirm a 30–45 min video call at a time that works for you." },
-                    { n: "3", t: "Automation roadmap", d: "After the call, we send a custom automation roadmap with prioritized opportunities and estimated ROI." },
-                  ].map((step) => (
-                    <li key={step.n} className="flex gap-4">
-                      <div className="w-7 h-7 rounded-full bg-brand-500/20 border border-brand-500/30 flex items-center justify-center text-brand-400 text-sm font-bold flex-shrink-0">
-                        {step.n}
-                      </div>
-                      <div>
-                        <div className="text-white font-semibold text-sm">{step.t}</div>
-                        <div className="text-gray-500 text-xs mt-0.5 leading-relaxed">{step.d}</div>
-                      </div>
-                    </li>
-                  ))}
-                </ol>
-              </Card>
-            </FadeUp>
-
-            <FadeUp delay={0.2}>
-              <Card className="rounded-lg p-7 ring-0 border border-border">
-                <h3 className="text-white font-bold text-lg mb-4">Contact Info</h3>
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3 text-gray-400 text-sm">
-                    <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0">
-                      <Mail className="size-3.5 text-brand-500" />
-                    </div>
-                    alihassankhaliq20@gmail.com
-                  </div>
-                  <div className="flex items-center gap-3 text-gray-400 text-sm">
-                    <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0">
-                      <Phone className="size-3.5 text-brand-500" />
-                    </div>
-                    +92 (304) 981-4394
-                  </div>
-                  <div className="flex items-center gap-3 text-gray-400 text-sm">
-                    <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0">
-                      <Clock className="size-3.5 text-brand-500" />
-                    </div>
-                    Response within 24 hours
-                  </div>
-                </div>
-
-                <div className="mt-6 pt-6 border-t border-white/5">
-                  <a
-                    href="https://calendly.com/automate-us"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 w-full justify-center px-5 py-3 rounded-xl border border-brand-500/30 bg-brand-500/5 hover:bg-brand-500/10 text-brand-400 font-semibold text-sm transition-colors"
-                  >
-                    <Calendar className="size-3.5" />
-                    Schedule via Calendly
-                  </a>
-                </div>
-              </Card>
-            </FadeUp>
-
-            <FadeUp delay={0.3}>
-              <Card className="rounded-lg p-7 ring-0 border border-brand-500/20">
-                <div className="flex items-center gap-2 mb-3">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} width="14" height="14" viewBox="0 0 14 14" fill="#f59e0b">
-                      <path d="M7 1l1.545 3.13 3.455.503-2.5 2.437.59 3.43L7 8.885l-3.09 1.625.59-3.43L2 4.633l3.455-.503z"/>
-                    </svg>
-                  ))}
-                </div>
-                <p className="text-gray-300 text-sm leading-relaxed italic">
-                  &ldquo;The discovery call alone was worth it. They identified automations we hadn&apos;t even thought of and gave us a clear picture of exactly how to save 15+ hours per week.&rdquo;
-                </p>
-                <div className="mt-4 text-sm">
-                  <div className="text-white font-semibold">Emma Walsh</div>
-                  <div className="text-gray-500 text-xs">Operations Manager, BrightPath Agency</div>
-                </div>
-              </Card>
-            </FadeUp>
-          </div>
         </div>
-      </section>
-    </>
+      </div>
+    </main>
   );
 }
