@@ -453,18 +453,10 @@ export default async function BlogPostPage({ params }) {
                     <Link
                       key={rp.slug}
                       href={`/blog/${rp.slug}`}
-                      className="group block rounded-xl p-4 transition-all duration-200"
+                      className="group block rounded-xl p-4 transition-all duration-200 hover:!border-[rgba(99,102,241,0.3)] hover:!bg-[rgba(99,102,241,0.04)]"
                       style={{
                         background: "rgba(255,255,255,0.02)",
                         border: "1px solid rgba(255,255,255,0.07)",
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.borderColor = "rgba(99,102,241,0.3)";
-                        e.currentTarget.style.background = "rgba(99,102,241,0.04)";
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.borderColor = "rgba(255,255,255,0.07)";
-                        e.currentTarget.style.background = "rgba(255,255,255,0.02)";
                       }}
                     >
                       <span
