@@ -7,27 +7,30 @@
 /* ─── Design tokens ─────────────────────────────────────────── */
 
 :root {
-  --surface-card:      #121214;
-  --surface-hover:     #17171a;
-  --surface-800:       #101012;
-  --surface-700:       #1a1a1d;
+  /* "Volt" — near-black graphite, electric lime brand, teal secondary */
+  --surface-card:      #111214;
+  --surface-hover:     #18191C;
+  --surface-800:       #0C0D0F;
+  --surface-700:       #18191C;
 
   --border:      oklch(0.922 0 0);
-  --border-brand:      rgba(99,102,241,0.3);
+  --border-brand:      rgba(190,240,74,0.3);
 
-  --text-primary:      #f4f4f5;
-  --text-secondary:    #a1a1aa;
-  --text-muted:        #71717a;
-  --text-faint:        #3f3f46;
+  --text-primary:      #F4F6F0;
+  --text-secondary:    #B9BDB4;
+  --text-muted:        #80857C;
+  --text-faint:        #4A4D47;
 
-  --brand-50:          #eef2ff;
-  --brand-400:         #818cf8;
-  --brand-500:         #6366f1;
-  --brand-600:         #4f46e5;
-  --brand-700:         #4338ca;
+  --brand-50:          #F8FFE6;
+  --brand-200:         #EBFDB8;
+  --brand-300:         #DDFA8A;
+  --brand-400:         #CFF56A;
+  --brand-500:         #BEF04A;
+  --brand-600:         #9FD12E;
+  --brand-700:         #78A01C;
 
-  --accent-400:        #34d399;
-  --accent-500:        #10b981;
+  --accent-400:        #5EEAD4;
+  --accent-500:        #2DD4BF;
 
   --gradient-hero:     none;
   --gradient-orb:      transparent;
@@ -36,8 +39,8 @@
   --shadow-card:       none;
   --shadow-btn:        none;
 
-  --scrollbar-bg:      #0a0a0a;
-  --scrollbar-thumb:   #3f3f46;
+  --scrollbar-bg:      #08090A;
+  --scrollbar-thumb:   #2A2C28;
   --background:      oklch(1 0 0);
   --foreground:      oklch(0.145 0 0);
   --card:      oklch(1 0 0);
@@ -74,9 +77,12 @@
 /* ─── Tailwind theme extension ──────────────────────────────── */
 
 @theme inline {
-  --font-sans:      var(--font-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans:      var(--font-geist-sans), system-ui, sans-serif;
+  --font-mono:      var(--font-geist-mono), ui-monospace, monospace;
+  --font-serif:     var(--font-instrument-serif), Georgia, serif;
 
+  --color-brand-200: var(--brand-200);
+  --color-brand-300: var(--brand-300);
   --color-brand-400: var(--brand-400);
   --color-brand-500: var(--brand-500);
   --color-brand-600: var(--brand-600);
@@ -146,14 +152,14 @@ body {
 /* ─── Utilities ─────────────────────────────────────────────── */
 
 .gradient-text {
-  background: linear-gradient(135deg, #818cf8 0%, #6366f1 40%, #34d399 100%);
+  background: linear-gradient(120deg, #F4F6F0 0%, #DDFA8A 38%, #BEF04A 62%, #5EEAD4 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gradient-text-green {
-  background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+  background: linear-gradient(135deg, #5EEAD4 0%, #BEF04A 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -172,8 +178,8 @@ body {
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 .bento-card:hover {
-  border-color: rgba(99,102,241,0.4);
-  box-shadow: 0 0 40px rgba(99,102,241,0.08);
+  border-color: rgba(190,240,74,0.4);
+  box-shadow: 0 0 40px rgba(190,240,74,0.08);
 }
 
 /* Noise texture overlay */
@@ -224,6 +230,15 @@ body {
 }
 
 /* ─── Float ──────────────────────────────────────────────────── */
+
+@keyframes beam-breathe {
+  0%, 100% { filter: blur(var(--beam-blur)) brightness(1); }
+  50%       { filter: blur(var(--beam-blur)) brightness(1.6); }
+}
+.beam-breathe { animation: beam-breathe 6s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .beam-breathe { animation: none; }
+}
 
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
@@ -289,21 +304,254 @@ input[type="range"]::-webkit-slider-thumb {
 
 select option { background: var(--surface-800); color: var(--text-primary); }
 
+/* ─── Film grain overlay ────────────────────────────────────── */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ─── Glowing border (pointer-tracking card edge) ───────────── */
+
+@property --glow-start {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
+.glow-border {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  --glow-active: 0;
+  transition: --glow-start 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+/* Edge ring — a conic arc that points toward the cursor */
+.glow-border::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: var(--glow-width, 1.5px);
+  background: conic-gradient(
+    from calc((var(--glow-start) - var(--glow-spread, 40)) * 1deg),
+    transparent 0deg,
+    var(--brand-600) calc(var(--glow-spread, 40) * 0.5deg),
+    #F2F2F2 calc(var(--glow-spread, 40) * 1deg),
+    var(--brand-500) calc(var(--glow-spread, 40) * 1.5deg),
+    transparent calc(var(--glow-spread, 40) * 2deg)
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  opacity: var(--glow-active);
+  transition: opacity 0.35s ease;
+}
+/* Soft spotlight that follows the cursor inside the card */
+.glow-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    420px circle at var(--glow-x, 50%) var(--glow-y, 50%),
+    rgba(190, 240, 74, 0.07),
+    transparent 60%
+  );
+  opacity: var(--glow-active);
+  transition: opacity 0.35s ease;
+}
+
+/* ─── Border beam (light travelling around an edge) ─────────── */
+
+.border-beam {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  border: var(--beam-width, 1.5px) solid transparent;
+  mask-image: linear-gradient(transparent, transparent), linear-gradient(#000, #000);
+  mask-clip: padding-box, border-box;
+  mask-composite: intersect;
+}
+.border-beam::after {
+  content: "";
+  position: absolute;
+  aspect-ratio: 1;
+  width: var(--beam-size, 180px);
+  background: linear-gradient(to left, #F2F2F2, var(--brand-500), transparent);
+  offset-anchor: 90% 50%;
+  offset-path: rect(0 auto auto 0 round var(--beam-size, 180px));
+  animation: border-beam var(--beam-duration, 10s) linear infinite;
+  animation-delay: var(--beam-delay, 0s);
+}
+@keyframes border-beam {
+  to { offset-distance: 100%; }
+}
+
+/* ─── Animated gradient pill border ─────────────────────────── */
+
+@property --pill-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+.pill-border {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(color-mix(in srgb, var(--background) 88%, var(--brand-500)), color-mix(in srgb, var(--background) 88%, var(--brand-500))) padding-box,
+    conic-gradient(from var(--pill-angle), rgba(190,240,74,0.15), #F2F2F2, rgba(190,240,74,0.15) 35%, rgba(190,240,74,0.15) 65%, var(--brand-400), rgba(190,240,74,0.15)) border-box;
+  animation: pill-spin 5s linear infinite;
+}
+@keyframes pill-spin {
+  to { --pill-angle: 360deg; }
+}
+
+/* ─── Shine sweep on primary buttons ────────────────────────── */
+
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.btn-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,0.55) 50%, transparent 70%);
+  transform: translateX(-120%);
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-shine:hover::after { transform: translateX(120%); }
+
+/* ─── Vertical marquee (testimonial columns) ────────────────── */
+
+@keyframes marquee-up {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-50%); }
+}
+.marquee-up {
+  animation: marquee-up var(--marquee-duration, 40s) linear infinite;
+  will-change: transform;
+}
+.marquee-up:hover { animation-play-state: paused; }
+.marquee-mask-y {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 14%, #000 86%, transparent 100%);
+  mask-image:         linear-gradient(180deg, transparent 0%, #000 14%, #000 86%, transparent 100%);
+}
+
+/* ─── Serif accent words in headlines ───────────────────────── */
+
+.accent-serif {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.08em;
+  letter-spacing: -0.01em;
+  padding-right: 0.08em; /* keeps the italic overhang inside background-clip */
+}
+
+/* Grid that fades out toward the edges */
+.grid-fade {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 64px 64px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 35%, #000 30%, transparent 85%);
+  mask-image:         radial-gradient(ellipse 70% 60% at 50% 35%, #000 30%, transparent 85%);
+}
+
+/* Dotted backdrop for card visuals */
+.dot-bg {
+  background-image: radial-gradient(rgba(255,255,255,0.09) 1px, transparent 1px);
+  background-size: 14px 14px;
+}
+
+/* ─── Workflow canvas beams ─────────────────────────────────── */
+
+@keyframes beam-flow {
+  from { stroke-dashoffset: 24; }
+  to   { stroke-dashoffset: -100; }
+}
+.flow-beam {
+  stroke-dasharray: 24 100;
+  animation: beam-flow var(--flow-duration, 2.6s) cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  animation-delay: var(--flow-delay, 0s);
+}
+
+@keyframes hub-ring {
+  0%   { transform: scale(1);    opacity: 0.55; }
+  100% { transform: scale(1.65); opacity: 0; }
+}
+.hub-ring { animation: hub-ring 2.4s cubic-bezier(0.16, 1, 0.3, 1) infinite; }
+
+/* ─── Service card micro-visuals ────────────────────────────── */
+
+@keyframes travel {
+  from { left: 0%; }
+  to   { left: 100%; }
+}
+.travel-dot { animation: travel 2.8s cubic-bezier(0.45, 0, 0.55, 1) infinite; }
+
+@keyframes typing-dot {
+  0%, 60%, 100% { transform: translateY(0);    opacity: 0.4; }
+  30%           { transform: translateY(-3px); opacity: 1; }
+}
+.typing-dot { animation: typing-dot 1.2s ease-in-out infinite; }
+
+@keyframes bar-rise {
+  0%, 100% { transform: scaleY(0.35); }
+  50%      { transform: scaleY(1); }
+}
+.bar-rise {
+  transform-origin: bottom;
+  animation: bar-rise 3.2s ease-in-out infinite;
+}
+
+@keyframes caret-blink {
+  0%, 50%   { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+.caret { animation: caret-blink 1s step-end infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .flow-beam,
+  .hub-ring,
+  .travel-dot,
+  .typing-dot,
+  .bar-rise,
+  .caret,
+  .border-beam::after,
+  .pill-border,
+  .marquee-up,
+  .marquee-track,
+  .marquee-track-reverse { animation: none; }
+  .glow-border { transition: none; }
+}
+
 .dark {
-  --background:      #0a0a0a;
-  --foreground:      #f4f4f5;
-  --card:      #121214;
-  --card-foreground:      #f4f4f5;
-  --popover:      #121214;
-  --popover-foreground:      #f4f4f5;
-  --primary:      var(--brand-600);
-  --primary-foreground:      #ffffff;
-  --secondary:      #1a1a1d;
-  --secondary-foreground:      #f4f4f5;
-  --muted:      #17171a;
-  --muted-foreground:      #a1a1aa;
-  --accent:      #17171a;
-  --accent-foreground:      #f4f4f5;
+  --background:      #08090A;
+  --foreground:      #F4F6F0;
+  --card:      #111214;
+  --card-foreground:      #F4F6F0;
+  --popover:      #111214;
+  --popover-foreground:      #F4F6F0;
+  --primary:      var(--brand-500);
+  --primary-foreground:      #0A0B07;
+  --secondary:      #18191C;
+  --secondary-foreground:      #F4F6F0;
+  --muted:      #18191C;
+  --muted-foreground:      #B9BDB4;
+  --accent:      #18191C;
+  --accent-foreground:      #F4F6F0;
   --destructive:      oklch(0.704 0.191 22.216);
   --border:      rgba(255,255,255,0.09);
   --input:      rgba(255,255,255,0.12);
@@ -332,5 +580,9 @@ select option { background: var(--surface-800); color: var(--text-primary); }
   }
   html {
     @apply font-sans;
+  }
+  h1, h2 {
+    letter-spacing: -0.035em;
+    text-wrap: balance;
   }
 }

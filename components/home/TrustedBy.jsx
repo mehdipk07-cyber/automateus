@@ -107,11 +107,6 @@ function PlatformChip({ platform }) {
   );
 }
 
-const stats = [
-  { value: "500+", label: "supported integrations" },
-  { value: "Any API", label: "can be connected" },
-  { value: "1-click", label: "syncs & webhooks" },
-];
 
 export default function TrustedBy() {
   const row1doubled = [...row1, ...row1];
@@ -135,10 +130,10 @@ export default function TrustedBy() {
           Works seamlessly with your existing tools
         </p>
         <h3
-          className="text-2xl sm:text-3xl font-bold"
+          className="text-2xl sm:text-4xl font-semibold"
           style={{ color: "var(--text-primary)" }}
         >
-          Connect <span className="gradient-text">anything</span> in your stack
+          Connect <span className="gradient-text accent-serif">anything</span> in your stack
         </h3>
       </FadeUp>
 
@@ -159,28 +154,6 @@ export default function TrustedBy() {
           ))}
         </div>
       </div>
-
-      {/* Stats strip */}
-      <FadeUp className="mt-12 flex flex-wrap items-center justify-center gap-x-10 gap-y-4 px-4">
-        {stats.map((s, i) => (
-          <div key={i} className="flex items-center gap-2.5">
-            <span
-              className="text-lg font-bold gradient-text"
-            >
-              {s.value}
-            </span>
-            <span className="text-sm" style={{ color: "var(--text-muted)" }}>
-              {s.label}
-            </span>
-            {i < stats.length - 1 && (
-              <span
-                className="ml-8 hidden sm:block w-px h-4"
-                style={{ background: "rgba(255,255,255,0.1)" }}
-              />
-            )}
-          </div>
-        ))}
-      </FadeUp>
     </section>
   );
 }

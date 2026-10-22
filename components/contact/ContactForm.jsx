@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Check, Loader2 } from "lucide-react";
 import { Label } from "@/components/ui/label";
@@ -44,8 +45,8 @@ const inputStyle = {
 };
 
 const inputFocusStyle = {
-  borderColor: "rgba(99,102,241,0.5)",
-  boxShadow: "0 0 0 3px rgba(99,102,241,0.08)",
+  borderColor: "rgba(190,240,74,0.5)",
+  boxShadow: "0 0 0 3px rgba(190,240,74,0.08)",
 };
 
 function StyledInput({ onFocus, onBlur, style, ...props }) {
@@ -129,15 +130,15 @@ export default function ContactForm() {
         className="rounded-2xl p-14 text-center"
         style={{
           background: "var(--surface-card)",
-          border: "1px solid rgba(99,102,241,0.25)",
-          boxShadow: "0 0 60px rgba(99,102,241,0.08)",
+          border: "1px solid rgba(190,240,74,0.25)",
+          boxShadow: "0 0 60px rgba(190,240,74,0.08)",
         }}
       >
         <div
           className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
           style={{
-            background: "rgba(52,211,153,0.12)",
-            border: "1px solid rgba(52,211,153,0.3)",
+            background: "rgba(94,234,212,0.12)",
+            border: "1px solid rgba(94,234,212,0.3)",
           }}
         >
           <Check className="size-9" style={{ color: "var(--accent-400)" }} strokeWidth={2.5} />
@@ -183,7 +184,7 @@ export default function ContactForm() {
         className="p-px rounded-2xl"
         style={{
           background:
-            "linear-gradient(135deg, rgba(99,102,241,0.4) 0%, rgba(99,102,241,0.1) 40%, rgba(52,211,153,0.2) 100%)",
+            "linear-gradient(135deg, rgba(190,240,74,0.4) 0%, rgba(190,240,74,0.1) 40%, rgba(94,234,212,0.2) 100%)",
         }}
       >
         <div
@@ -259,14 +260,14 @@ export default function ContactForm() {
                       className="px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all duration-200"
                       style={{
                         background: active
-                          ? "rgba(99,102,241,0.18)"
+                          ? "rgba(190,240,74,0.18)"
                           : "rgba(255,255,255,0.04)",
                         border: active
-                          ? "1px solid rgba(99,102,241,0.45)"
+                          ? "1px solid rgba(190,240,74,0.45)"
                           : "1px solid rgba(255,255,255,0.08)",
                         color: active ? "var(--brand-400)" : "var(--text-muted)",
                         boxShadow: active
-                          ? "0 0 12px rgba(99,102,241,0.15)"
+                          ? "0 0 12px rgba(190,240,74,0.15)"
                           : "none",
                       }}
                     >
@@ -301,10 +302,10 @@ export default function ContactForm() {
                       className="px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all duration-200"
                       style={{
                         background: active
-                          ? "rgba(52,211,153,0.12)"
+                          ? "rgba(94,234,212,0.12)"
                           : "rgba(255,255,255,0.04)",
                         border: active
-                          ? "1px solid rgba(52,211,153,0.4)"
+                          ? "1px solid rgba(94,234,212,0.4)"
                           : "1px solid rgba(255,255,255,0.08)",
                         color: active ? "var(--accent-400)" : "var(--text-muted)",
                       }}
@@ -345,19 +346,19 @@ export default function ContactForm() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full flex items-center justify-center gap-2.5 py-4 rounded-xl font-bold text-base text-white transition-all duration-200 mt-2 disabled:opacity-70"
+              className="w-full flex items-center justify-center gap-2.5 py-4 rounded-xl font-bold text-base text-[#0D0D0D] transition-all duration-200 mt-2 disabled:opacity-70"
               style={{
-                background: "linear-gradient(135deg, #6366f1 0%, #4f46e5 100%)",
-                boxShadow: "0 4px 24px rgba(99,102,241,0.35)",
+                background: "linear-gradient(135deg, #BEF04A 0%, #9FD12E 100%)",
+                boxShadow: "0 4px 24px rgba(190,240,74,0.35)",
               }}
               onMouseEnter={(e) =>
                 !loading &&
                 (e.currentTarget.style.boxShadow =
-                  "0 6px 32px rgba(99,102,241,0.5)")
+                  "0 6px 32px rgba(190,240,74,0.5)")
               }
               onMouseLeave={(e) =>
                 (e.currentTarget.style.boxShadow =
-                  "0 4px 24px rgba(99,102,241,0.35)")
+                  "0 4px 24px rgba(190,240,74,0.35)")
               }
             >
               {loading ? (
@@ -377,7 +378,10 @@ export default function ContactForm() {
               className="text-xs text-center mt-1"
               style={{ color: "var(--text-faint)" }}
             >
-              No spam · No commitment · Your info stays private
+              No spam · No commitment · By submitting, you agree to our{" "}
+              <Link href="/privacy" className="underline underline-offset-2 hover:text-[var(--text-secondary)]">
+                Privacy Policy
+              </Link>
             </p>
           </form>
         </div>

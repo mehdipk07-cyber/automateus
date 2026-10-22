@@ -16,7 +16,7 @@ const posts = [
     date: "Jun 10, 2026",
     slug: "10-processes-to-automate-first",
     featured: true,
-    categoryColor: "#6366f1",
+    categoryColor: "#BEF04A",
     image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=900&h=500&fit=crop&q=80",
   },
   {
@@ -56,7 +56,7 @@ const posts = [
     readTime: "6 min read",
     date: "May 14, 2026",
     slug: "20-hours-saved-case-study",
-    categoryColor: "#10b981",
+    categoryColor: "#F2F2F2",
     image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop&q=80",
   },
   {
@@ -76,7 +76,7 @@ const posts = [
     readTime: "10 min read",
     date: "Jul 18, 2026",
     slug: "automate-client-onboarding",
-    categoryColor: "#6366f1",
+    categoryColor: "#BEF04A",
     image: "https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=600&h=400&fit=crop&q=80",
   },
 ];
@@ -149,13 +149,13 @@ export default function BlogContent() {
               className="rounded-full px-4 py-2 text-sm font-medium transition-all duration-200"
               style={{
                 background: isActive
-                  ? "linear-gradient(135deg, #6366f1, #4f46e5)"
+                  ? "linear-gradient(135deg, #BEF04A, #9FD12E)"
                   : "rgba(255,255,255,0.04)",
                 border: isActive
-                  ? "1px solid rgba(99,102,241,0.4)"
+                  ? "1px solid rgba(190,240,74,0.4)"
                   : "1px solid rgba(255,255,255,0.08)",
-                color: isActive ? "#ffffff" : "var(--text-muted)",
-                boxShadow: isActive ? "0 0 16px rgba(99,102,241,0.25)" : "none",
+                color: isActive ? "#0D0D0D" : "var(--text-muted)",
+                boxShadow: isActive ? "0 0 16px rgba(190,240,74,0.25)" : "none",
               }}
             >
               {cat}

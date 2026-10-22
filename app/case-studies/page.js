@@ -24,13 +24,13 @@ export const metadata = {
     title: "Case Studies | Real Automation Results — AutomateUs",
     description: "See how AutomateUs has helped businesses save thousands of hours, reduce costs, and scale operations with custom automation solutions.",
     url: "https://automate-us.vercel.app/case-studies",
-    images: [{ url: "/logo.jpg", width: 1200, height: 630, alt: "AutomateUs Case Studies" }],
+    images: [{ url: "/logo.png", width: 768, height: 768, alt: "AutomateUs Case Studies" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Case Studies | Real Automation Results — AutomateUs",
     description: "See how AutomateUs has helped businesses save thousands of hours, reduce costs, and scale operations with custom automation solutions.",
-    images: ["/logo.jpg"],
+    images: ["/logo.png"],
   },
 };
 
@@ -124,7 +124,7 @@ export default function CaseStudiesPage() {
             </Badge>
             <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6">
               Real Businesses.{" "}
-              <span className="gradient-text">Real Results.</span>
+              <span className="gradient-text accent-serif">Real Results.</span>
             </h1>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
               See how we&apos;ve helped businesses across industries save thousands of hours, eliminate manual work, and scale their operations.
@@ -189,12 +189,12 @@ export default function CaseStudiesPage() {
                   </div>
                   <div className="p-8 lg:p-10">
                     <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4 flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-emerald-400 flex-shrink-0" /> The Results
+                      <span className="w-2 h-2 rounded-full bg-accent-400 flex-shrink-0" /> The Results
                     </h3>
                     <ul className="space-y-2.5">
                       {cs.results.map((r) => (
                         <li key={r} className="flex items-start gap-2 text-gray-400 text-sm">
-                          <Check className="size-3.5 flex-shrink-0 mt-0.5 text-emerald-500" />
+                          <Check className="size-3.5 flex-shrink-0 mt-0.5 text-accent-400" />
                           {r}
                         </li>
                       ))}

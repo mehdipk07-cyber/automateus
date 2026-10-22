@@ -3,7 +3,7 @@ import { useRef, useEffect, useCallback } from "react";
 
 export default function ClickSparkProvider({
   children,
-  sparkColor = "#818cf8",
+  sparkColor = "#CFF56A",
   sparkSize = 8,
   sparkRadius = 22,
   sparkCount = 8,

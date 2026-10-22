@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowRight, MessageCircle } from "lucide-react";
 import { FadeUp } from "@/components/AnimatedSection";
 import { Button } from "@/components/ui/button";
+import { SectionBadge } from "@/components/ui/section-badge";
 import {
   Accordion,
   AccordionItem,
@@ -53,22 +54,13 @@ export default function FAQ() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
           {/* Left: heading */}
           <FadeUp className="lg:col-span-4 lg:sticky lg:top-28">
-            <span
-              className="inline-block px-3 py-1 rounded-md border text-xs font-bold uppercase tracking-widest mb-5"
-              style={{
-                color: "var(--brand-400)",
-                borderColor: "rgba(99,102,241,0.2)",
-                background: "rgba(99,102,241,0.08)",
-              }}
-            >
-              FAQ
-            </span>
+            <SectionBadge>FAQ</SectionBadge>
             <h2
-              className="text-4xl lg:text-5xl font-bold leading-tight mb-5"
+              className="text-4xl lg:text-6xl font-semibold leading-[1.05] mb-5"
               style={{ color: "var(--text-primary)" }}
             >
               Common{" "}
-              <span className="gradient-text">Questions</span>
+              <span className="gradient-text accent-serif">Questions</span>
             </h2>
             <p className="text-lg leading-relaxed mb-10" style={{ color: "var(--text-secondary)" }}>
               Everything you need to know before getting started. Still have questions? We&apos;re here to help.

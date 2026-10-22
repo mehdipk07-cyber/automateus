@@ -19,21 +19,19 @@ const footerLinks = {
   ],
   Resources: [
     { label: "ROI Calculator", href: "/#roi-calculator" },
-    { label: "Automation Quiz", href: "/#quiz" },
     { label: "Free Consultation", href: "/contact" },
-    { label: "Newsletter", href: "/#newsletter" },
   ],
 };
 
 export default function Footer() {
   return (
-    <footer style={{ background: "var(--surface-800)", borderTop: "1px solid var(--border)" }}>
+    <footer className="overflow-hidden" style={{ background: "var(--surface-800)", borderTop: "1px solid var(--border)" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <Image src="/logo.jpg" alt="AutomateUs logo" width={32} height={32} className="w-8 h-8 rounded-lg object-cover" />
+              <Image src="/logo.png" alt="AutomateUs logo" width={32} height={32} className="w-8 h-8 object-contain" />
               <span className="text-xl font-bold text-white tracking-tight">
                 Automate<span className="text-brand-400">Us</span>
               </span>
@@ -88,6 +86,16 @@ export default function Footer() {
             <Link href="/privacy" className="text-gray-500 hover:text-gray-300 text-sm transition-colors">Privacy</Link>
             <Link href="/terms" className="text-gray-500 hover:text-gray-300 text-sm transition-colors">Terms</Link>
           </div>
+        </div>
+      </div>
+
+      {/* Oversized wordmark, fading into the page edge */}
+      <div aria-hidden="true" className="relative overflow-hidden select-none pointer-events-none">
+        <div
+          className="text-center font-semibold leading-[0.8] tracking-[-0.06em] text-[16vw] translate-y-[12%] bg-clip-text text-transparent"
+          style={{ backgroundImage: "linear-gradient(to bottom, rgba(190,240,74,0.22), rgba(190,240,74,0.02) 85%)" }}
+        >
+          AutomateUs
         </div>
       </div>
     </footer>

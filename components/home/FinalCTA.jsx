@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Check, CalendarCheck } from "lucide-react";
 import { FadeUp } from "@/components/AnimatedSection";
 import { Button } from "@/components/ui/button";
+import { BorderBeam } from "@/components/ui/border-beam";
 
 const perks = [
   "30-min strategy call",
@@ -18,7 +19,7 @@ export default function FinalCTA() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 80% 60% at 50% 100%, rgba(99,102,241,0.18) 0%, transparent 70%)",
+            "radial-gradient(ellipse 80% 60% at 50% 100%, rgba(190,240,74,0.18) 0%, transparent 70%)",
         }}
       />
       <div
@@ -30,18 +31,24 @@ export default function FinalCTA() {
         }}
       />
 
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <FadeUp>
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <FadeUp
+          className="relative isolate rounded-[28px] border px-6 py-14 sm:px-12 sm:py-20 overflow-hidden"
+        >
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 -z-10 rounded-[inherit]"
+            style={{
+              background:
+                "radial-gradient(ellipse 70% 55% at 50% 0%, rgba(190,240,74,0.14), transparent 70%), color-mix(in srgb, var(--surface-card) 55%, transparent)",
+            }}
+          />
+          <div aria-hidden="true" className="pointer-events-none absolute inset-x-16 top-0 h-px bg-gradient-to-r from-transparent via-brand-300/70 to-transparent" />
+          <BorderBeam size={220} duration={12} />
+          <BorderBeam size={220} duration={12} delay={6} />
           {/* Badge */}
           <div className="flex justify-center mb-8">
-            <span
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-medium"
-              style={{
-                color: "var(--accent-400)",
-                borderColor: "rgba(52,211,153,0.3)",
-                background: "rgba(52,211,153,0.08)",
-              }}
-            >
+            <span className="pill-border inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium text-brand-200">
               <CalendarCheck className="size-4" />
               Free consultation — no commitment required
             </span>
@@ -49,12 +56,12 @@ export default function FinalCTA() {
 
           {/* Headline */}
           <h2
-            className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-[1.05] tracking-tight"
+            className="text-5xl sm:text-6xl lg:text-8xl font-semibold mb-6 leading-[1.02]"
             style={{ color: "var(--text-primary)" }}
           >
             Ready to Save Hours{" "}
             <br className="hidden sm:block" />
-            <span className="gradient-text">Every Week?</span>
+            <span className="gradient-text accent-serif">Every Week?</span>
           </h2>
 
           {/* Sub */}
@@ -69,7 +76,7 @@ export default function FinalCTA() {
           {/* CTA Button */}
           <Button
             size="lg"
-            className="h-auto px-12 py-5 text-lg font-bold mb-10 shadow-xl shadow-brand-500/30"
+            className="btn-shine h-auto px-12 py-5 text-lg font-bold mb-10 shadow-xl shadow-brand-500/30"
             render={<Link href="/contact" />}
           >
             Book Your Free Consultation

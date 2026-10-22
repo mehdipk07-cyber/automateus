@@ -1,4 +1,4 @@
-import { Geist } from "next/font/google";
+import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -8,6 +8,19 @@ import ClickSparkProvider from "@/components/ClickSparkProvider";
 const geist = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+// Italic accent words in headlines
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-instrument-serif",
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
 });
 
 export const metadata = {
@@ -40,7 +53,7 @@ export const metadata = {
     siteName: "AutomateUs",
     images: [
       {
-        url: "/logo.jpg",
+        url: "/logo.png",
         width: 1200,
         height: 630,
         alt: "AutomateUs — Custom Automation Agency",
@@ -52,7 +65,7 @@ export const metadata = {
     title: "AutomateUs | Custom Automation Agency",
     description:
       "We build custom automations that eliminate manual tasks, reduce operational costs, and help your team focus on high-value work.",
-    images: ["/logo.jpg"],
+    images: ["/logo.png"],
   },
   robots: {
     index: true,
@@ -79,7 +92,7 @@ const organizationSchema = {
   "@type": "ProfessionalService",
   name: "AutomateUs",
   url: "https://automate-us.vercel.app",
-  logo: "https://automate-us.vercel.app/logo.jpg",
+  logo: "https://automate-us.vercel.app/logo.png",
   description:
     "AutomateUs helps businesses eliminate repetitive tasks and streamline operations through custom automation solutions using Make.com, Zapier, Monday.com, and AI.",
   email: "alihassankhaliq20@gmail.com",
@@ -94,7 +107,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`dark ${geist.variable}`}
+      className={`dark ${geist.variable} ${geistMono.variable} ${instrumentSerif.variable}`}
       data-scroll-behavior="smooth"
     >
       <body className="min-h-screen antialiased flex flex-col bg-background text-foreground">
@@ -109,7 +122,7 @@ export default function RootLayout({ children }) {
         {/* Skip to content */}
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-brand-600 focus:text-white focus:font-semibold focus:text-sm"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-brand-600 focus:text-[#0D0D0D] focus:font-semibold focus:text-sm"
         >
           Skip to content
         </a>

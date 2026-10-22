@@ -27,13 +27,13 @@ export const metadata = {
     description:
       "Explore AutomateUs's full range of automation services — from workflow and AI automation to Monday.com, Make.com, Zapier, CRM, and custom API integrations.",
     url: "https://automate-us.vercel.app/services",
-    images: [{ url: "/logo.jpg", width: 1200, height: 630, alt: "AutomateUs Services" }],
+    images: [{ url: "/logo.png", width: 768, height: 768, alt: "AutomateUs Services" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Services | Workflow, AI & CRM Automation — AutomateUs",
     description: "Explore AutomateUs's full range of automation services — from workflow and AI automation to Monday.com, Make.com, Zapier, CRM, and custom API integrations.",
-    images: ["/logo.jpg"],
+    images: ["/logo.png"],
   },
 };
 
@@ -259,7 +259,7 @@ export default function ServicesPage() {
             </Badge>
             <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6">
               Every Automation Service{" "}
-              <span className="gradient-text">Your Business Needs</span>
+              <span className="gradient-text accent-serif">Your Business Needs</span>
             </h1>
             <BlurText
               text="From simple Zapier workflows to complex AI-powered systems — we design, build, and maintain automation solutions that scale with your business."
@@ -292,7 +292,7 @@ export default function ServicesPage() {
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-8">
                     {s.capabilities.map((cap) => (
                       <li key={cap} className="flex items-center gap-2 text-gray-400 text-sm">
-                        <Check className="size-3.5 flex-shrink-0 text-emerald-500" />
+                        <Check className="size-3.5 flex-shrink-0 text-accent-400" />
                         {cap}
                       </li>
                     ))}

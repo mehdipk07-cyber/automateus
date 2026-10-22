@@ -1,9 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles, Zap } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import HeroLights from "@/components/home/HeroLights";
+import WorkflowCanvas from "@/components/home/WorkflowCanvas";
+import { BorderBeam } from "@/components/ui/border-beam";
 
 const stats = [
   { value: "10,000+", label: "Hours Saved" },
@@ -12,86 +16,97 @@ const stats = [
   { value: "3×",      label: "Avg. ROI" },
 ];
 
+const avatars = [
+  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96&h=96&fit=crop&crop=faces&q=80",
+  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=96&h=96&fit=crop&crop=faces&q=80",
+  "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=96&h=96&fit=crop&crop=faces&q=80",
+  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=96&h=96&fit=crop&crop=faces&q=80",
+];
+
+const ease = [0.16, 1, 0.3, 1];
+
+function Reveal({ children, delay = 0, className = "" }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 24, filter: "blur(8px)" }}
+      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      transition={{ duration: 0.8, delay, ease }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+    <section className="relative overflow-hidden bg-background pt-32 sm:pt-40 pb-20 lg:pb-28">
       {/* Gradient orbs */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div
-          className="glow-orb w-[700px] h-[700px] top-[-10%] left-[-10%] opacity-20"
-          style={{ background: "radial-gradient(circle, #6366f1, transparent 70%)" }}
+          className="glow-orb w-[700px] h-[700px] top-[-15%] left-[-12%] opacity-[0.16]"
+          style={{ background: "radial-gradient(circle, #BEF04A, transparent 70%)" }}
         />
         <div
-          className="glow-orb w-[500px] h-[500px] bottom-[-5%] right-[-5%] opacity-15"
-          style={{ background: "radial-gradient(circle, #34d399, transparent 70%)" }}
+          className="glow-orb w-[520px] h-[520px] top-[20%] right-[-10%] opacity-[0.14]"
+          style={{ background: "radial-gradient(circle, #5EEAD4, transparent 70%)" }}
         />
         <div
-          className="glow-orb w-[600px] h-[600px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.06]"
-          style={{ background: "radial-gradient(circle, #818cf8, transparent 70%)" }}
+          className="glow-orb w-[900px] h-[500px] top-[55%] left-1/2 -translate-x-1/2 opacity-[0.10]"
+          style={{ background: "radial-gradient(ellipse, #CFF56A, transparent 70%)" }}
         />
       </div>
 
-      {/* Subtle grid */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: `linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-                            linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)`,
-          backgroundSize: "64px 64px",
-        }}
-      />
+      <HeroLights />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20 text-center">
-        {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="mb-10 flex justify-center"
-        >
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-500/30 bg-brand-500/10 text-brand-400 text-sm font-medium">
-            <Sparkles className="size-3.5" />
-            Trusted by 100+ growing businesses
-            <span className="w-1.5 h-1.5 rounded-full bg-accent-400 animate-pulse ml-1" />
-          </span>
-        </motion.div>
+      {/* Grid, fading toward the edges */}
+      <div className="grid-fade absolute inset-0 pointer-events-none" />
+
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        {/* Announcement pill */}
+        <Reveal className="mb-9 flex justify-center">
+          <Link
+            href="/services#ai"
+            className="pill-border group inline-flex items-center gap-2.5 pl-1.5 pr-4 py-1.5 rounded-full text-sm"
+            style={{ color: "var(--text-secondary)" }}
+          >
+            <span className="rounded-full bg-brand-500 px-2 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-wider text-[#0A0B07]">
+              New
+            </span>
+            AI agents for operations teams
+            <ArrowRight className="size-3.5 text-brand-400 transition-transform group-hover:translate-x-0.5" />
+          </Link>
+        </Reveal>
 
         {/* Headline */}
         <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="text-6xl sm:text-7xl lg:text-[90px] font-bold leading-[1.04] tracking-tight mb-8"
+          initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.9, delay: 0.08, ease }}
+          className="text-[44px] leading-[1.02] sm:text-7xl lg:text-[96px] font-semibold mb-7"
+          style={{ color: "var(--text-primary)" }}
         >
-          <span style={{ color: "var(--text-primary)" }}>Automate </span>
-          <span className="gradient-text">Repetitive</span>
+          Automate <span className="gradient-text accent-serif">Repetitive</span> Work.
           <br />
-          <span style={{ color: "var(--text-primary)" }}>Work. </span>
-          <span className="gradient-text">Scale Faster.</span>
+          Scale <span className="gradient-text accent-serif">Faster.</span>
         </motion.h1>
 
         {/* Subheadline */}
-        <motion.p
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.22 }}
-          className="text-lg sm:text-xl max-w-2xl mx-auto mb-12 leading-relaxed"
-          style={{ color: "var(--text-secondary)" }}
-        >
-          We build custom automations that eliminate manual tasks, reduce operational costs,
-          and help your team focus on high-value work.
-        </motion.p>
+        <Reveal delay={0.2}>
+          <p
+            className="text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
+            style={{ color: "var(--text-secondary)" }}
+          >
+            We build custom automations that eliminate manual tasks, reduce operational costs,
+            and help your team focus on high-value work.
+          </p>
+        </Reveal>
 
         {/* CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.32 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20"
-        >
+        <Reveal delay={0.3} className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-10">
           <Button
             size="lg"
-            className="h-auto px-9 py-4 text-base font-semibold shadow-lg shadow-brand-500/25"
+            className="btn-shine h-auto rounded-full px-8 py-4 text-base font-semibold shadow-[0_0_40px_-8px_rgba(190,240,74,0.6)]"
             render={<Link href="/contact" />}
           >
             Book a Free Consultation
@@ -100,65 +115,84 @@ export default function Hero() {
           <Button
             size="lg"
             variant="outline"
-            className="h-auto px-9 py-4 text-base font-semibold"
+            className="h-auto rounded-full px-8 py-4 text-base font-semibold backdrop-blur-sm"
             render={<Link href="/case-studies" />}
           >
-            <Zap className="size-4" />
+            <Zap className="size-4 text-brand-400" />
             View Case Studies
+            <ArrowUpRight className="size-4 opacity-60" />
           </Button>
+        </Reveal>
+
+        {/* Social proof */}
+        <Reveal delay={0.4} className="flex items-center justify-center gap-3 mb-16 lg:mb-20">
+          <div className="flex -space-x-2.5">
+            {avatars.map((src) => (
+              <Image
+                key={src}
+                src={src}
+                alt=""
+                width={32}
+                height={32}
+                className="size-8 rounded-full object-cover ring-2 ring-background"
+              />
+            ))}
+          </div>
+          <p className="text-sm text-left leading-tight" style={{ color: "var(--text-muted)" }}>
+            <span className="font-semibold" style={{ color: "var(--text-primary)" }}>100+ growing businesses</span>
+            <br />
+            run on our automations
+          </p>
+        </Reveal>
+
+        {/* Product visual */}
+        <motion.div
+          initial={{ opacity: 0, y: 48, scale: 0.97 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 1.1, delay: 0.5, ease }}
+          className="relative hidden sm:block max-w-5xl mx-auto rounded-2xl"
+        >
+          {/* Glow behind the canvas */}
+          <div
+            aria-hidden="true"
+            className="absolute -inset-x-10 -top-10 bottom-0 -z-10 blur-3xl opacity-40"
+            style={{ background: "radial-gradient(ellipse 60% 50% at 50% 30%, rgba(190,240,74,0.35), transparent 70%)" }}
+          />
+          <WorkflowCanvas />
+          <BorderBeam size={240} duration={14} />
         </motion.div>
 
-        {/* Stats grid */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.46 }}
-          className="grid grid-cols-2 sm:grid-cols-4 max-w-3xl mx-auto rounded-2xl overflow-hidden"
-          style={{ border: "1px solid rgba(255,255,255,0.08)", background: "rgba(255,255,255,0.02)" }}
+        {/* Stats strip */}
+        <Reveal
+          delay={0.6}
+          className="relative grid grid-cols-2 sm:grid-cols-4 max-w-5xl mx-auto mt-6 rounded-2xl overflow-hidden backdrop-blur-sm"
         >
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 rounded-[inherit] border"
+            style={{ borderColor: "rgba(255,255,255,0.08)", background: "rgba(255,255,255,0.02)" }}
+          />
           {stats.map((stat, i) => (
             <div
               key={stat.label}
-              className="py-7 px-4 text-center"
+              className="relative py-6 px-4 text-center"
               style={{
                 borderRight: i < stats.length - 1 ? "1px solid rgba(255,255,255,0.06)" : "none",
               }}
             >
-              <div
-                className="text-3xl font-bold mb-1"
-                style={{ color: "var(--text-primary)" }}
-              >
+              <div className="font-mono text-2xl sm:text-3xl font-medium mb-1" style={{ color: "var(--text-primary)" }}>
                 {stat.value}
               </div>
               <div
-                className="text-xs uppercase tracking-widest"
+                className="font-mono text-[10px] uppercase tracking-[0.2em]"
                 style={{ color: "var(--text-muted)" }}
               >
                 {stat.label}
               </div>
             </div>
           ))}
-        </motion.div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.4 }}
-          className="mt-16 flex justify-center"
-        >
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="flex flex-col items-center gap-2"
-            style={{ color: "var(--text-faint)" }}
-          >
-            <span className="text-[10px] tracking-[0.2em] uppercase">Scroll</span>
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-              <path d="M3 6l5 5 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </motion.div>
-        </motion.div>
+          <BorderBeam size={160} duration={9} />
+        </Reveal>
       </div>
     </section>
   );

@@ -17,7 +17,7 @@ export default function NotFound() {
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] pointer-events-none"
         style={{
-          background: "radial-gradient(ellipse, rgba(99,102,241,0.10) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse, rgba(190,240,74,0.10) 0%, transparent 70%)",
           filter: "blur(80px)",
         }}
       />
@@ -47,8 +47,8 @@ export default function NotFound() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm text-white transition-opacity hover:opacity-90"
-            style={{ background: "linear-gradient(135deg,#6366f1,#4f46e5)" }}
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm text-[#0D0D0D] transition-opacity hover:opacity-90"
+            style={{ background: "linear-gradient(135deg,#BEF04A,#9FD12E)" }}
           >
             <Home className="size-4" />
             Back to Home

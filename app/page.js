@@ -7,7 +7,6 @@ import CaseStudiesPreview from "@/components/home/CaseStudiesPreview";
 import Testimonials from "@/components/home/Testimonials";
 import ROICalculator from "@/components/home/ROICalculator";
 import FAQ from "@/components/home/FAQ";
-import Newsletter from "@/components/home/Newsletter";
 import FinalCTA from "@/components/home/FinalCTA";
 
 export const metadata = {
@@ -30,13 +29,13 @@ export const metadata = {
     description:
       "AutomateUs builds custom automations that eliminate manual tasks, reduce operational costs, and help your team focus on high-value work.",
     url: "https://automate-us.vercel.app",
-    images: [{ url: "/logo.jpg", width: 1200, height: 630, alt: "AutomateUs — Custom Automation Agency" }],
+    images: [{ url: "/logo.png", width: 768, height: 768, alt: "AutomateUs — Custom Automation Agency" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "AutomateUs | Automate Repetitive Work. Scale Faster.",
     description: "AutomateUs builds custom automations that eliminate manual tasks, reduce operational costs, and help your team focus on high-value work.",
-    images: ["/logo.jpg"],
+    images: ["/logo.png"],
   },
 };
 
@@ -103,7 +102,6 @@ export default function HomePage() {
       <Testimonials />
       <ROICalculator />
       <FAQ />
-      <Newsletter />
       <FinalCTA />
     </>
   );

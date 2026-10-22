@@ -23,13 +23,13 @@ export const metadata = {
     title: "About AutomateUs — Custom Automation Agency",
     description: "Learn about AutomateUs — our mission, values, and why hundreds of businesses trust us to build their automation systems.",
     url: "https://automate-us.vercel.app/about",
-    images: [{ url: "/logo.jpg", width: 1200, height: 630, alt: "About AutomateUs" }],
+    images: [{ url: "/logo.png", width: 768, height: 768, alt: "About AutomateUs" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "About AutomateUs — Custom Automation Agency",
     description: "Learn about AutomateUs — our mission, values, and why hundreds of businesses trust us to build their automation systems.",
-    images: ["/logo.jpg"],
+    images: ["/logo.png"],
   },
 };
 
@@ -116,7 +116,7 @@ export default function AboutPage() {
             </Badge>
             <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6">
               We Help Businesses{" "}
-              <span className="gradient-text">Work Smarter</span>
+              <span className="gradient-text accent-serif">Work Smarter</span>
             </h1>
             <BlurText
               text="AutomateUs is a specialist automation agency focused on helping growing businesses eliminate manual work, reduce costs, and scale faster through custom automation solutions."

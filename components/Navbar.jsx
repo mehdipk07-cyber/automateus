@@ -32,32 +32,45 @@ export default function Navbar() {
 
   return (
     <header
-      style={{
-        position: "fixed",
-        top: 0, left: 0, right: 0,
-        zIndex: 50,
-        transition: "background 0.3s, border-color 0.3s, box-shadow 0.3s",
-        background: scrolled
-          ? "color-mix(in srgb, var(--background) 85%, transparent)"
-          : "transparent",
-        borderBottom: scrolled
-          ? "1px solid rgba(255,255,255,0.07)"
-          : "1px solid transparent",
-        backdropFilter: scrolled ? "blur(24px) saturate(180%)" : "none",
-        WebkitBackdropFilter: scrolled ? "blur(24px) saturate(180%)" : "none",
-        boxShadow: scrolled ? "0 8px 48px rgba(0,0,0,0.2)" : "none",
-      }}
+      className="fixed inset-x-0 top-0 z-50 px-3 sm:px-4 transition-[padding] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
+      style={{ paddingTop: scrolled ? 12 : 0 }}
     >
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+      {/* Full-width bar at the top; condenses into a floating glass pill on scroll */}
+      <nav
+        className="relative mx-auto px-4 sm:px-6 lg:px-8 border transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
+        style={{
+          maxWidth: scrolled ? "64rem" : "80rem",
+          borderRadius: scrolled ? 18 : 0,
+          background: scrolled
+            ? "color-mix(in srgb, var(--background) 72%, transparent)"
+            : "transparent",
+          borderColor: scrolled ? "rgba(255,255,255,0.09)" : "transparent",
+          backdropFilter: scrolled ? "blur(24px) saturate(180%)" : "none",
+          WebkitBackdropFilter: scrolled ? "blur(24px) saturate(180%)" : "none",
+          boxShadow: scrolled
+            ? "0 12px 48px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.05)"
+            : "none",
+        }}
+      >
+        {scrolled && (
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-brand-300/60 to-transparent"
+          />
+        )}
+        <div
+          className={`flex items-center justify-between transition-[height] duration-500 ${
+            scrolled ? "h-14 lg:h-16" : "h-16 lg:h-20"
+          }`}
+        >
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 group">
             <Image
-              src="/logo.jpg"
+              src="/logo.png"
               alt="AutomateUs logo"
               width={32}
               height={32}
-              className="w-8 h-8 rounded-lg object-cover"
+              className="w-8 h-8 object-contain"
               priority
             />
             <span
@@ -94,7 +107,7 @@ export default function Navbar() {
                     <motion.span
                       layoutId="nav-pill"
                       className="absolute inset-0 rounded-lg"
-                      style={{ background: "rgba(99,102,241,0.1)" }}
+                      style={{ background: "rgba(190,240,74,0.1)" }}
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
                   )}
@@ -108,7 +121,7 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-3">
             <Button
               size="sm"
-              className="h-9 px-5 text-sm font-semibold shadow-md shadow-brand-500/20"
+              className="btn-shine h-9 rounded-full px-5 text-sm font-semibold shadow-[0_0_24px_-6px_rgba(190,240,74,0.55)]"
               render={<Link href="/contact" />}
             >
               Book Free Call
@@ -139,11 +152,12 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.22, ease: "easeInOut" }}
-            className="lg:hidden overflow-hidden"
+            className="lg:hidden overflow-hidden mt-2 rounded-2xl"
             style={{
-              borderTop: "1px solid rgba(255,255,255,0.07)",
+              border: "1px solid rgba(255,255,255,0.08)",
               background: "color-mix(in srgb, var(--background) 92%, transparent)",
               backdropFilter: "blur(24px)",
+              WebkitBackdropFilter: "blur(24px)",
             }}
           >
             <div className="px-4 py-6 space-y-1">
@@ -157,7 +171,7 @@ export default function Navbar() {
                     className="flex items-center gap-3 px-4 py-3 rounded-xl font-medium transition-all"
                     style={{
                       color: active ? "var(--brand-400)" : "var(--text-secondary)",
-                      background: active ? "rgba(99,102,241,0.1)" : "transparent",
+                      background: active ? "rgba(190,240,74,0.1)" : "transparent",
                     }}
                     aria-current={active ? "page" : undefined}
                   >

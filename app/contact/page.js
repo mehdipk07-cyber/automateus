@@ -4,6 +4,7 @@ import {
 } from "lucide-react";
 import ContactForm from "@/components/contact/ContactForm";
 import ContactSidebar from "@/components/contact/ContactSidebar";
+import CalendlyEmbed from "@/components/contact/CalendlyEmbed";
 import { FadeUp } from "@/components/AnimatedSection";
 
 export const metadata = {
@@ -22,13 +23,13 @@ export const metadata = {
     title: "Book a Free Automation Consultation — AutomateUs",
     description: "Book a free 30-minute discovery call with AutomateUs. Tell us about your processes and we'll show you exactly how automation can save your team time and money.",
     url: "https://automate-us.vercel.app/contact",
-    images: [{ url: "/logo.jpg", width: 1200, height: 630, alt: "Contact AutomateUs" }],
+    images: [{ url: "/logo.png", width: 768, height: 768, alt: "Contact AutomateUs" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Book a Free Automation Consultation — AutomateUs",
     description: "Book a free 30-minute discovery call with AutomateUs. Tell us about your processes and we'll show you exactly how automation can save your team time and money.",
-    images: ["/logo.jpg"],
+    images: ["/logo.png"],
   },
 };
 
@@ -60,19 +61,41 @@ export default function ContactPage() {
       <div
         className="absolute top-0 left-0 w-[600px] h-[600px] pointer-events-none"
         style={{
-          background: "radial-gradient(ellipse, rgba(99,102,241,0.10) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse, rgba(190,240,74,0.10) 0%, transparent 70%)",
           filter: "blur(80px)",
         }}
       />
       <div
         className="absolute bottom-0 right-0 w-[500px] h-[500px] pointer-events-none"
         style={{
-          background: "radial-gradient(ellipse, rgba(52,211,153,0.07) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse, rgba(94,234,212,0.07) 0%, transparent 70%)",
           filter: "blur(80px)",
         }}
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-28">
+
+        {/* ── Calendly scheduler ── */}
+        <FadeUp>
+          <section id="schedule" className="mb-24 scroll-mt-28">
+            <div className="text-center max-w-2xl mx-auto mb-10">
+              <h1
+                className="text-4xl lg:text-5xl font-bold leading-tight mb-4"
+                style={{ color: "var(--text-primary)" }}
+              >
+                Book Your Free <span className="gradient-text accent-serif">Discovery Call</span>
+              </h1>
+              <p
+                className="text-lg leading-relaxed"
+                style={{ color: "var(--text-secondary)" }}
+              >
+                Pick a time that works for you and we&apos;ll see you on the call.
+              </p>
+            </div>
+            <CalendlyEmbed />
+          </section>
+        </FadeUp>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
           {/* ── LEFT: Info panel ── */}
@@ -83,8 +106,8 @@ export default function ContactPage() {
               <div
                 className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold uppercase tracking-widest mb-6"
                 style={{
-                  background: "rgba(99,102,241,0.08)",
-                  border: "1px solid rgba(99,102,241,0.2)",
+                  background: "rgba(190,240,74,0.08)",
+                  border: "1px solid rgba(190,240,74,0.2)",
                   color: "var(--brand-400)",
                 }}
               >
@@ -95,13 +118,13 @@ export default function ContactPage() {
                 Free Consultation
               </div>
 
-              <h1
+              <h2
                 className="text-4xl lg:text-5xl font-bold leading-tight mb-5"
                 style={{ color: "var(--text-primary)" }}
               >
                 Let&apos;s Build Your{" "}
-                <span className="gradient-text">Automation System</span>
-              </h1>
+                <span className="gradient-text accent-serif">Automation System</span>
+              </h2>
 
               <p
                 className="text-lg leading-relaxed"
@@ -116,14 +139,14 @@ export default function ContactPage() {
             <div
               className="inline-flex items-center gap-3 px-4 py-2.5 rounded-xl"
               style={{
-                background: "rgba(16,185,129,0.06)",
-                border: "1px solid rgba(16,185,129,0.2)",
+                background: "rgba(94,234,212,0.06)",
+                border: "1px solid rgba(94,234,212,0.2)",
               }}
             >
               <div className="relative flex-shrink-0">
                 <span
                   className="ping-dot relative inline-flex w-2.5 h-2.5 rounded-full"
-                  style={{ background: "#34d399", color: "#34d399" }}
+                  style={{ background: "#5EEAD4", color: "#5EEAD4" }}
                 />
               </div>
               <div>
@@ -161,8 +184,8 @@ export default function ContactPage() {
                       <div
                         className="w-9 h-9 rounded-xl flex items-center justify-center text-xs font-bold flex-shrink-0"
                         style={{
-                          background: "rgba(99,102,241,0.12)",
-                          border: "1px solid rgba(99,102,241,0.25)",
+                          background: "rgba(190,240,74,0.12)",
+                          border: "1px solid rgba(190,240,74,0.25)",
                           color: "var(--brand-400)",
                         }}
                       >
@@ -171,7 +194,7 @@ export default function ContactPage() {
                       {i < steps.length - 1 && (
                         <div
                           className="w-px flex-1 my-1"
-                          style={{ background: "rgba(99,102,241,0.15)", minHeight: "28px" }}
+                          style={{ background: "rgba(190,240,74,0.15)", minHeight: "28px" }}
                         />
                       )}
                     </div>
@@ -204,7 +227,7 @@ export default function ContactPage() {
             >
               <div className="flex gap-0.5 mb-4">
                 {[...Array(5)].map((_, i) => (
-                  <svg key={i} width="14" height="14" viewBox="0 0 14 14" fill="#f59e0b">
+                  <svg key={i} width="14" height="14" viewBox="0 0 14 14" fill="#BEF04A">
                     <path d="M7 1l1.545 3.13 3.455.503-2.5 2.437.59 3.43L7 8.885l-3.09 1.625.59-3.43L2 4.633l3.455-.503z" />
                   </svg>
                 ))}
@@ -219,8 +242,8 @@ export default function ContactPage() {
               </p>
               <div className="flex items-center gap-3">
                 <div
-                  className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold text-white flex-shrink-0"
-                  style={{ background: "linear-gradient(135deg,#6366f1,#4f46e5)" }}
+                  className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold text-[#0D0D0D] flex-shrink-0"
+                  style={{ background: "linear-gradient(135deg,#BEF04A,#9FD12E)" }}
                 >
                   E
                 </div>
