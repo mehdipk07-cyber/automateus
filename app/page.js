@@ -29,13 +29,13 @@ export const metadata = {
     description:
       "AutomateUs builds custom automations that eliminate manual tasks, reduce operational costs, and help your team focus on high-value work.",
     url: "https://automate-us.vercel.app",
-    images: [{ url: "/logo.png", width: 768, height: 768, alt: "AutomateUs — Custom Automation Agency" }],
+    images: [{ url: "/logo-automateus.png", width: 1254, height: 1254, alt: "AutomateUs — Custom Automation Agency" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "AutomateUs | Automate Repetitive Work. Scale Faster.",
     description: "AutomateUs builds custom automations that eliminate manual tasks, reduce operational costs, and help your team focus on high-value work.",
-    images: ["/logo.png"],
+    images: ["/logo-automateus.png"],
   },
 };
 

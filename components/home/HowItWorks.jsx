@@ -12,40 +12,40 @@ const steps = [
     title: "Discovery Call",
     desc: "We dive deep into your current workflows, pain points, and business goals to identify the highest-impact automation opportunities.",
     icon: Phone,
-    color: "rgba(190,240,74,0.15)",
-    iconColor: "#CFF56A",
+    color: "rgba(225,176,126,0.15)",
+    iconColor: "#E5BE9E",
   },
   {
     number: "02",
     title: "Process Analysis",
     desc: "Our team maps every manual step in your operations, quantifies time spent, and prioritizes automations by ROI potential.",
     icon: Search,
-    color: "rgba(94,234,212,0.12)",
-    iconColor: "#5EEAD4",
+    color: "rgba(134,163,151,0.12)",
+    iconColor: "#86A397",
   },
   {
     number: "03",
     title: "Automation Design",
     desc: "We architect a custom automation solution tailored to your exact needs — with clear logic, error handling, and scalability built in.",
     icon: PenTool,
-    color: "rgba(190,240,74,0.15)",
-    iconColor: "#CFF56A",
+    color: "rgba(225,176,126,0.15)",
+    iconColor: "#E5BE9E",
   },
   {
     number: "04",
     title: "Development & Testing",
     desc: "We build, test, and refine every automation with real data — ensuring reliability before anything touches your live systems.",
     icon: FlaskConical,
-    color: "rgba(94,234,212,0.12)",
-    iconColor: "#5EEAD4",
+    color: "rgba(134,163,151,0.12)",
+    iconColor: "#86A397",
   },
   {
     number: "05",
     title: "Deployment & Support",
     desc: "We deploy seamlessly, train your team, and provide ongoing monitoring and support to ensure everything keeps running perfectly.",
     icon: Rocket,
-    color: "rgba(190,240,74,0.15)",
-    iconColor: "#CFF56A",
+    color: "rgba(225,176,126,0.15)",
+    iconColor: "#E5BE9E",
   },
 ];
 
@@ -74,8 +74,8 @@ function StepCard({ step, index }) {
           className="w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-500"
           style={{
             background: step.color,
-            border: `1px solid ${reached ? "rgba(242,242,242,0.45)" : `${step.iconColor}30`}`,
-            boxShadow: reached ? "0 0 28px rgba(190,240,74,0.35)" : "none",
+            border: `1px solid ${reached ? "rgba(245,242,237,0.45)" : `${step.iconColor}30`}`,
+            boxShadow: reached ? "0 0 28px rgba(225,176,126,0.35)" : "none",
           }}
         >
           <step.icon className="size-6" style={{ color: step.iconColor }} />
@@ -135,7 +135,7 @@ export default function HowItWorks() {
             <div
               aria-hidden="true"
               className="absolute left-7 top-2 bottom-0 w-px -translate-x-1/2"
-              style={{ background: "linear-gradient(to bottom, rgba(190,240,74,0.25), rgba(190,240,74,0.08))" }}
+              style={{ background: "linear-gradient(to bottom, rgba(225,176,126,0.25), rgba(225,176,126,0.08))" }}
             />
             {/* Fill beam */}
             <motion.div
@@ -143,8 +143,8 @@ export default function HowItWorks() {
               className="absolute left-7 top-2 bottom-0 w-[2px] -translate-x-1/2 origin-top rounded-full"
               style={{
                 scaleY: progress,
-                background: "linear-gradient(to bottom, transparent, #BEF04A 15%, #F2F2F2 100%)",
-                boxShadow: "0 0 12px rgba(242,242,242,0.45)",
+                background: "linear-gradient(to bottom, transparent, #E1B07E 15%, #F5F2ED 100%)",
+                boxShadow: "0 0 12px rgba(245,242,237,0.45)",
               }}
             />
             {steps.map((step, i) => (

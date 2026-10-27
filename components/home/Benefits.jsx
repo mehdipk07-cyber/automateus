@@ -57,7 +57,7 @@ export default function Benefits() {
       <div
         aria-hidden="true"
         className="pointer-events-none absolute left-1/2 top-1/3 h-[480px] w-[900px] -translate-x-1/2 rounded-full blur-[120px] opacity-[0.12]"
-        style={{ background: "radial-gradient(ellipse, #BEF04A, transparent 70%)" }}
+        style={{ background: "radial-gradient(ellipse, #E1B07E, transparent 70%)" }}
       />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

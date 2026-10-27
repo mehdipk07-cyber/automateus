@@ -19,7 +19,7 @@ export default function FinalCTA() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 80% 60% at 50% 100%, rgba(190,240,74,0.18) 0%, transparent 70%)",
+            "radial-gradient(ellipse 80% 60% at 50% 100%, rgba(225,176,126,0.18) 0%, transparent 70%)",
         }}
       />
       <div
@@ -33,14 +33,14 @@ export default function FinalCTA() {
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <FadeUp
-          className="relative isolate rounded-[28px] border px-6 py-14 sm:px-12 sm:py-20 overflow-hidden"
+          className="theme-sand relative isolate rounded-[28px] border px-6 py-14 sm:px-12 sm:py-20 overflow-hidden"
         >
           <div
             aria-hidden="true"
             className="absolute inset-0 -z-10 rounded-[inherit]"
             style={{
               background:
-                "radial-gradient(ellipse 70% 55% at 50% 0%, rgba(190,240,74,0.14), transparent 70%), color-mix(in srgb, var(--surface-card) 55%, transparent)",
+                "radial-gradient(ellipse 70% 55% at 50% 0%, rgba(245,242,237,0.45), transparent 70%), radial-gradient(ellipse 60% 50% at 50% 110%, rgba(54,29,46,0.12), transparent 70%)",
             }}
           />
           <div aria-hidden="true" className="pointer-events-none absolute inset-x-16 top-0 h-px bg-gradient-to-r from-transparent via-brand-300/70 to-transparent" />

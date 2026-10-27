@@ -24,13 +24,13 @@ export const metadata = {
     title: "Case Studies | Real Automation Results — AutomateUs",
     description: "See how AutomateUs has helped businesses save thousands of hours, reduce costs, and scale operations with custom automation solutions.",
     url: "https://automate-us.vercel.app/case-studies",
-    images: [{ url: "/logo.png", width: 768, height: 768, alt: "AutomateUs Case Studies" }],
+    images: [{ url: "/logo-automateus.png", width: 1254, height: 1254, alt: "AutomateUs Case Studies" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Case Studies | Real Automation Results — AutomateUs",
     description: "See how AutomateUs has helped businesses save thousands of hours, reduce costs, and scale operations with custom automation solutions.",
-    images: ["/logo.png"],
+    images: ["/logo-automateus.png"],
   },
 };
 
@@ -122,11 +122,11 @@ export default function CaseStudiesPage() {
             <Badge variant="outline" className="mb-6 border-accent-500/20 bg-accent-500/10 px-3 py-1 text-xs tracking-widest text-accent-400 uppercase">
               Case Studies
             </Badge>
-            <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6">
+            <h1 className="text-5xl lg:text-6xl font-bold text-content mb-6">
               Real Businesses.{" "}
               <span className="gradient-text accent-serif">Real Results.</span>
             </h1>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            <p className="text-xl text-content-secondary max-w-2xl mx-auto">
               See how we&apos;ve helped businesses across industries save thousands of hours, eliminate manual work, and scale their operations.
             </p>
           </FadeUp>
@@ -153,12 +153,12 @@ export default function CaseStudiesPage() {
                     <Badge variant="outline" className="border-accent-500/30 bg-black/40 text-xs tracking-widest text-accent-400 uppercase backdrop-blur-sm">
                       {cs.tag}
                     </Badge>
-                    <Badge variant="secondary" className="bg-black/40 text-gray-300 backdrop-blur-sm">{cs.client}</Badge>
+                    <Badge variant="secondary" className="bg-black/40 text-content-secondary backdrop-blur-sm">{cs.client}</Badge>
                   </div>
                 </div>
                 {/* Header */}
                 <div className="p-8 lg:p-10 border-b border-white/5">
-                  <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">{cs.title}</h2>
+                  <h2 className="text-3xl lg:text-4xl font-bold text-content mb-6">{cs.title}</h2>
 
                   {/* Animated metrics */}
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
@@ -167,7 +167,7 @@ export default function CaseStudiesPage() {
                         <div className="text-3xl font-bold gradient-text">
                           <AnimatedCounter end={m.end} suffix={m.suffix} duration={1600} />
                         </div>
-                        <div className="text-gray-500 text-xs mt-1">{m.label}</div>
+                        <div className="text-content-muted text-xs mt-1">{m.label}</div>
                       </div>
                     ))}
                   </div>
@@ -176,24 +176,24 @@ export default function CaseStudiesPage() {
                 {/* Body */}
                 <div className="grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-white/5">
                   <div className="p-8 lg:p-10">
-                    <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4 flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-red-400 flex-shrink-0" /> The Challenge
+                    <h3 className="text-content font-semibold text-sm uppercase tracking-wider mb-4 flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-brand-700 flex-shrink-0" /> The Challenge
                     </h3>
-                    <p className="text-gray-400 text-sm leading-relaxed">{cs.challenge}</p>
+                    <p className="text-content-secondary text-sm leading-relaxed">{cs.challenge}</p>
                   </div>
                   <div className="p-8 lg:p-10">
-                    <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4 flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-yellow-400 flex-shrink-0" /> The Solution
+                    <h3 className="text-content font-semibold text-sm uppercase tracking-wider mb-4 flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-brand-500 flex-shrink-0" /> The Solution
                     </h3>
-                    <p className="text-gray-400 text-sm leading-relaxed">{cs.solution}</p>
+                    <p className="text-content-secondary text-sm leading-relaxed">{cs.solution}</p>
                   </div>
                   <div className="p-8 lg:p-10">
-                    <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4 flex items-center gap-2">
+                    <h3 className="text-content font-semibold text-sm uppercase tracking-wider mb-4 flex items-center gap-2">
                       <span className="w-2 h-2 rounded-full bg-accent-400 flex-shrink-0" /> The Results
                     </h3>
                     <ul className="space-y-2.5">
                       {cs.results.map((r) => (
-                        <li key={r} className="flex items-start gap-2 text-gray-400 text-sm">
+                        <li key={r} className="flex items-start gap-2 text-content-secondary text-sm">
                           <Check className="size-3.5 flex-shrink-0 mt-0.5 text-accent-400" />
                           {r}
                         </li>
@@ -201,10 +201,10 @@ export default function CaseStudiesPage() {
                     </ul>
 
                     <div className="mt-6">
-                      <div className="text-xs text-gray-600 uppercase tracking-wider mb-3">Tools Used</div>
+                      <div className="text-xs text-content-muted uppercase tracking-wider mb-3">Tools Used</div>
                       <div className="flex flex-wrap gap-2">
                         {cs.tools.map((tool) => (
-                          <Badge key={tool} variant="secondary" className="text-gray-400">
+                          <Badge key={tool} variant="secondary" className="text-content-secondary">
                             {tool}
                           </Badge>
                         ))}
@@ -222,8 +222,8 @@ export default function CaseStudiesPage() {
       <section className="py-24 bg-surface-800/30">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeUp>
-            <h2 className="text-4xl font-bold text-white mb-4">Your Business Could Be Next</h2>
-            <p className="text-gray-400 text-lg mb-8">
+            <h2 className="text-4xl font-bold text-content mb-4">Your Business Could Be Next</h2>
+            <p className="text-content-secondary text-lg mb-8">
               Book a free discovery call and let&apos;s identify the automation opportunities that will have the biggest impact for you.
             </p>
             <Button size="lg" className="h-auto px-10 py-5 text-lg font-bold" render={<Link href="/contact" />}>

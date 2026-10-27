@@ -72,7 +72,7 @@ export default function HeroLights() {
   const py = useMotionValue(-1000);
   const sx = useSpring(px, { stiffness: 120, damping: 25 });
   const sy = useSpring(py, { stiffness: 120, damping: 25 });
-  const spotlight = useMotionTemplate`radial-gradient(520px circle at ${sx}px ${sy}px, rgba(207,245,106,0.10), transparent 70%)`;
+  const spotlight = useMotionTemplate`radial-gradient(520px circle at ${sx}px ${sy}px, rgba(229,190,158,0.10), transparent 70%)`;
 
   useEffect(() => {
     if (reduceMotion) return;
@@ -94,17 +94,17 @@ export default function HeroLights() {
         transition={{ duration: 1.6, ease: "easeOut" }}
         className="absolute inset-0"
       >
-        <Beam side="left" color="#BEF04A" mx={mx} my={my} />
-        <Beam side="right" color="#5EEAD4" mx={mx} my={my} />
+        <Beam side="left" color="#E1B07E" mx={mx} my={my} />
+        <Beam side="right" color="#86A397" mx={mx} my={my} />
 
         {/* Edge glow where the beams enter */}
         <div
           className="absolute inset-y-0 left-0 w-1/3"
-          style={{ background: "radial-gradient(ellipse at 0% 20%, rgba(190,240,74,0.28), transparent 65%)" }}
+          style={{ background: "radial-gradient(ellipse at 0% 20%, rgba(225,176,126,0.28), transparent 65%)" }}
         />
         <div
           className="absolute inset-y-0 right-0 w-1/3"
-          style={{ background: "radial-gradient(ellipse at 100% 20%, rgba(94,234,212,0.2), transparent 65%)" }}
+          style={{ background: "radial-gradient(ellipse at 100% 20%, rgba(134,163,151,0.2), transparent 65%)" }}
         />
       </motion.div>
 

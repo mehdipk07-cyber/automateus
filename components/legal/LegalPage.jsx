@@ -38,7 +38,7 @@ export default function LegalPage({ badge, title, accent, intro, sections, relat
         <div
           aria-hidden="true"
           className="glow-orb w-[640px] h-[420px] -top-40 left-1/2 -translate-x-1/2 opacity-[0.12]"
-          style={{ background: "radial-gradient(ellipse, #BEF04A, transparent 70%)" }}
+          style={{ background: "radial-gradient(ellipse, #E1B07E, transparent 70%)" }}
         />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <SectionBadge>{badge}</SectionBadge>

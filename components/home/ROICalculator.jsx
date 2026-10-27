@@ -34,7 +34,7 @@ function SliderRow({ label, icon: Icon, min, max, value, onChange, formatValue, 
         <div className="flex items-center gap-2.5">
           <div
             className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0"
-            style={{ background: "rgba(190,240,74,0.12)", border: "1px solid rgba(190,240,74,0.2)" }}
+            style={{ background: "rgba(225,176,126,0.12)", border: "1px solid rgba(225,176,126,0.2)" }}
           >
             <Icon className="size-3.5 text-brand-400" />
           </div>
@@ -70,14 +70,14 @@ function MetricRow({ icon: Icon, label, value, sublabel, highlight, pct }) {
     <div
       className="flex items-center gap-4 p-4 rounded-xl transition-all duration-300"
       style={{
-        background: highlight ? "rgba(190,240,74,0.08)" : "rgba(255,255,255,0.02)",
-        border: `1px solid ${highlight ? "rgba(190,240,74,0.25)" : "rgba(255,255,255,0.06)"}`,
+        background: highlight ? "rgba(225,176,126,0.08)" : "rgba(255,255,255,0.02)",
+        border: `1px solid ${highlight ? "rgba(225,176,126,0.25)" : "rgba(255,255,255,0.06)"}`,
       }}
     >
       <div
         className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
         style={{
-          background: highlight ? "rgba(190,240,74,0.2)" : "rgba(255,255,255,0.05)",
+          background: highlight ? "rgba(225,176,126,0.2)" : "rgba(255,255,255,0.05)",
         }}
       >
         <Icon
@@ -108,8 +108,8 @@ function MetricRow({ icon: Icon, label, value, sublabel, highlight, pct }) {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             style={{
               background: highlight
-                ? "linear-gradient(90deg, #BEF04A, #CFF56A)"
-                : "linear-gradient(90deg, #5EEAD4, #F2F2F2)",
+                ? "linear-gradient(90deg, #E1B07E, #E5BE9E)"
+                : "linear-gradient(90deg, #86A397, #F5F2ED)",
             }}
           />
         </div>
@@ -141,7 +141,7 @@ export default function ROICalculator() {
       <div
         className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] pointer-events-none"
         style={{
-          background: "radial-gradient(ellipse, rgba(190,240,74,0.12) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse, rgba(225,176,126,0.12) 0%, transparent 70%)",
           filter: "blur(40px)",
         }}
       />
@@ -212,8 +212,8 @@ export default function ROICalculator() {
               <div
                 className="rounded-xl p-4 text-xs leading-relaxed"
                 style={{
-                  background: "rgba(190,240,74,0.06)",
-                  border: "1px solid rgba(190,240,74,0.12)",
+                  background: "rgba(225,176,126,0.06)",
+                  border: "1px solid rgba(225,176,126,0.12)",
                   color: "var(--text-muted)",
                 }}
               >
@@ -230,15 +230,15 @@ export default function ROICalculator() {
                 layout
                 className="rounded-2xl p-7 relative overflow-hidden"
                 style={{
-                  background: "linear-gradient(135deg, rgba(190,240,74,0.2) 0%, rgba(190,240,74,0.05) 100%)",
-                  border: "1px solid rgba(190,240,74,0.3)",
+                  background: "linear-gradient(135deg, rgba(225,176,126,0.2) 0%, rgba(225,176,126,0.05) 100%)",
+                  border: "1px solid rgba(225,176,126,0.3)",
                 }}
               >
                 {/* Decorative glow */}
                 <div
                   className="absolute -top-8 -right-8 w-40 h-40 rounded-full pointer-events-none"
                   style={{
-                    background: "radial-gradient(circle, rgba(190,240,74,0.3), transparent 70%)",
+                    background: "radial-gradient(circle, rgba(225,176,126,0.3), transparent 70%)",
                     filter: "blur(20px)",
                   }}
                 />

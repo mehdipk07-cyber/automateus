@@ -53,7 +53,7 @@ export const metadata = {
     siteName: "AutomateUs",
     images: [
       {
-        url: "/logo.png",
+        url: "/logo-automateus.png",
         width: 1200,
         height: 630,
         alt: "AutomateUs — Custom Automation Agency",
@@ -65,7 +65,7 @@ export const metadata = {
     title: "AutomateUs | Custom Automation Agency",
     description:
       "We build custom automations that eliminate manual tasks, reduce operational costs, and help your team focus on high-value work.",
-    images: ["/logo.png"],
+    images: ["/logo-automateus.png"],
   },
   robots: {
     index: true,
@@ -92,7 +92,7 @@ const organizationSchema = {
   "@type": "ProfessionalService",
   name: "AutomateUs",
   url: "https://automate-us.vercel.app",
-  logo: "https://automate-us.vercel.app/logo.png",
+  logo: "https://automate-us.vercel.app/logo-automateus.png",
   description:
     "AutomateUs helps businesses eliminate repetitive tasks and streamline operations through custom automation solutions using Make.com, Zapier, Monday.com, and AI.",
   email: "alihassankhaliq20@gmail.com",
@@ -122,7 +122,7 @@ export default function RootLayout({ children }) {
         {/* Skip to content */}
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-brand-600 focus:text-[#0D0D0D] focus:font-semibold focus:text-sm"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-brand-600 focus:text-[#0B1723] focus:font-semibold focus:text-sm"
         >
           Skip to content
         </a>

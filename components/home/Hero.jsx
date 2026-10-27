@@ -45,15 +45,15 @@ export default function Hero() {
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div
           className="glow-orb w-[700px] h-[700px] top-[-15%] left-[-12%] opacity-[0.16]"
-          style={{ background: "radial-gradient(circle, #BEF04A, transparent 70%)" }}
+          style={{ background: "radial-gradient(circle, #E1B07E, transparent 70%)" }}
         />
         <div
           className="glow-orb w-[520px] h-[520px] top-[20%] right-[-10%] opacity-[0.14]"
-          style={{ background: "radial-gradient(circle, #5EEAD4, transparent 70%)" }}
+          style={{ background: "radial-gradient(circle, #86A397, transparent 70%)" }}
         />
         <div
-          className="glow-orb w-[900px] h-[500px] top-[55%] left-1/2 -translate-x-1/2 opacity-[0.10]"
-          style={{ background: "radial-gradient(ellipse, #CFF56A, transparent 70%)" }}
+          className="glow-orb w-[900px] h-[500px] top-[55%] left-1/2 -translate-x-1/2 opacity-[0.7]"
+          style={{ background: "radial-gradient(ellipse, var(--midnight-violet), transparent 70%)" }}
         />
       </div>
 
@@ -70,7 +70,7 @@ export default function Hero() {
             className="pill-border group inline-flex items-center gap-2.5 pl-1.5 pr-4 py-1.5 rounded-full text-sm"
             style={{ color: "var(--text-secondary)" }}
           >
-            <span className="rounded-full bg-brand-500 px-2 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-wider text-[#0A0B07]">
+            <span className="rounded-full bg-brand-500 px-2 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-wider text-[#0B1723]">
               New
             </span>
             AI agents for operations teams
@@ -106,7 +106,7 @@ export default function Hero() {
         <Reveal delay={0.3} className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-10">
           <Button
             size="lg"
-            className="btn-shine h-auto rounded-full px-8 py-4 text-base font-semibold shadow-[0_0_40px_-8px_rgba(190,240,74,0.6)]"
+            className="btn-shine h-auto rounded-full px-8 py-4 text-base font-semibold shadow-[0_0_40px_-8px_rgba(225,176,126,0.6)]"
             render={<Link href="/contact" />}
           >
             Book a Free Consultation
@@ -156,7 +156,7 @@ export default function Hero() {
           <div
             aria-hidden="true"
             className="absolute -inset-x-10 -top-10 bottom-0 -z-10 blur-3xl opacity-40"
-            style={{ background: "radial-gradient(ellipse 60% 50% at 50% 30%, rgba(190,240,74,0.35), transparent 70%)" }}
+            style={{ background: "radial-gradient(ellipse 60% 50% at 50% 30%, rgba(225,176,126,0.35), transparent 70%)" }}
           />
           <WorkflowCanvas />
           <BorderBeam size={240} duration={14} />

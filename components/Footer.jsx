@@ -31,12 +31,14 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <Image src="/logo.png" alt="AutomateUs logo" width={32} height={32} className="w-8 h-8 object-contain" />
-              <span className="text-xl font-bold text-white tracking-tight">
+              <span className="w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center bg-content">
+                <Image src="/logo-automateus.png" alt="AutomateUs logo" width={32} height={32} className="w-8 h-8 object-contain scale-[1.6]" />
+              </span>
+              <span className="text-xl font-bold text-content tracking-tight">
                 Automate<span className="text-brand-400">Us</span>
               </span>
             </Link>
-            <p className="text-gray-400 text-sm leading-relaxed max-w-xs mb-6">
+            <p className="text-content-secondary text-sm leading-relaxed max-w-xs mb-6">
               We build custom automations that eliminate manual tasks, reduce operational costs, and help your team focus on high-value work.
             </p>
             <div className="flex items-center gap-4">
@@ -48,7 +50,7 @@ export default function Footer() {
                   key={social.label}
                   href="#"
                   aria-label={social.label}
-                  className="w-9 h-9 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center text-gray-400 hover:text-white transition-colors"
+                  className="w-9 h-9 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center text-content-secondary hover:text-content transition-colors"
                 >
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                     <path d={social.icon} />
@@ -61,13 +63,13 @@ export default function Footer() {
           {/* Links */}
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
-              <h4 className="text-white font-semibold text-sm mb-4">{category}</h4>
+              <h4 className="text-content font-semibold text-sm mb-4">{category}</h4>
               <ul className="space-y-2.5">
                 {links.map((link) => (
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-gray-400 hover:text-white text-sm transition-colors"
+                      className="text-content-secondary hover:text-content text-sm transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -79,12 +81,12 @@ export default function Footer() {
         </div>
 
         <div className="mt-16 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-gray-500 text-sm">
+          <p className="text-content-muted text-sm">
             © {new Date().getFullYear()} AutomateUs. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <Link href="/privacy" className="text-gray-500 hover:text-gray-300 text-sm transition-colors">Privacy</Link>
-            <Link href="/terms" className="text-gray-500 hover:text-gray-300 text-sm transition-colors">Terms</Link>
+            <Link href="/privacy" className="text-content-muted hover:text-content-secondary text-sm transition-colors">Privacy</Link>
+            <Link href="/terms" className="text-content-muted hover:text-content-secondary text-sm transition-colors">Terms</Link>
           </div>
         </div>
       </div>
@@ -93,7 +95,7 @@ export default function Footer() {
       <div aria-hidden="true" className="relative overflow-hidden select-none pointer-events-none">
         <div
           className="text-center font-semibold leading-[0.8] tracking-[-0.06em] text-[16vw] translate-y-[12%] bg-clip-text text-transparent"
-          style={{ backgroundImage: "linear-gradient(to bottom, rgba(190,240,74,0.22), rgba(190,240,74,0.02) 85%)" }}
+          style={{ backgroundImage: "linear-gradient(to bottom, rgba(225,176,126,0.22), rgba(225,176,126,0.02) 85%)" }}
         >
           AutomateUs
         </div>

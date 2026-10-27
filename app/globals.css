@@ -7,30 +7,39 @@
 /* ─── Design tokens ─────────────────────────────────────────── */
 
 :root {
-  /* "Volt" — near-black graphite, electric lime brand, teal secondary */
-  --surface-card:      #111214;
-  --surface-hover:     #18191C;
-  --surface-800:       #0C0D0F;
-  --surface-700:       #18191C;
+  /* Brand palette — navy dominant, accents used sparingly */
+  --navy:              #0B1723; /* Midnight Navy — main background */
+  --navy-card:         #101C2C; /* Card Navy — cards & surfaces */
+  --warm-white:        #F5F2ED; /* primary text */
+  --sandy-clay:        #E1B07E; /* buttons & highlights */
+  --desert-sand:       #E5BE9E; /* occasional light sections */
+  --pale-oak:          #CBC0AD; /* secondary text */
+  --muted-teal:        #86A397; /* subtle accents */
+  --midnight-violet:   #361D2E; /* occasional premium details */
+
+  --surface-card:      #101C2C;
+  --surface-hover:     #16263A;
+  --surface-800:       #0E1A28;
+  --surface-700:       #16263A;
 
   --border:      oklch(0.922 0 0);
-  --border-brand:      rgba(190,240,74,0.3);
+  --border-brand:      rgba(225,176,126,0.3);
 
-  --text-primary:      #F4F6F0;
-  --text-secondary:    #B9BDB4;
-  --text-muted:        #80857C;
-  --text-faint:        #4A4D47;
+  --text-primary:      #F5F2ED;
+  --text-secondary:    #CBC0AD;
+  --text-muted:        #9C9A94;
+  --text-faint:        #3A4859;
 
-  --brand-50:          #F8FFE6;
-  --brand-200:         #EBFDB8;
-  --brand-300:         #DDFA8A;
-  --brand-400:         #CFF56A;
-  --brand-500:         #BEF04A;
-  --brand-600:         #9FD12E;
-  --brand-700:         #78A01C;
+  --brand-50:          #FBF3EA;
+  --brand-200:         #F3DFCB;
+  --brand-300:         #EDD0B5;
+  --brand-400:         #E5BE9E;
+  --brand-500:         #E1B07E;
+  --brand-600:         #C8945F;
+  --brand-700:         #A97845;
 
-  --accent-400:        #5EEAD4;
-  --accent-500:        #2DD4BF;
+  --accent-400:        #86A397;
+  --accent-500:        #6F8C80;
 
   --gradient-hero:     none;
   --gradient-orb:      transparent;
@@ -39,8 +48,8 @@
   --shadow-card:       none;
   --shadow-btn:        none;
 
-  --scrollbar-bg:      #08090A;
-  --scrollbar-thumb:   #2A2C28;
+  --scrollbar-bg:      #0B1723;
+  --scrollbar-thumb:   #24344A;
   --background:      oklch(1 0 0);
   --foreground:      oklch(0.145 0 0);
   --card:      oklch(1 0 0);
@@ -87,6 +96,11 @@
   --color-brand-500: var(--brand-500);
   --color-brand-600: var(--brand-600);
   --color-brand-700: var(--brand-700);
+  --color-violet: var(--midnight-violet);
+  --color-desert-sand: var(--desert-sand);
+  --color-content: var(--text-primary);
+  --color-content-secondary: var(--text-secondary);
+  --color-content-muted: var(--text-muted);
   --color-accent-400: var(--accent-400);
   --color-accent-500: var(--accent-500);
   --color-surface-900: var(--background);
@@ -152,17 +166,49 @@ body {
 /* ─── Utilities ─────────────────────────────────────────────── */
 
 .gradient-text {
-  background: linear-gradient(120deg, #F4F6F0 0%, #DDFA8A 38%, #BEF04A 62%, #5EEAD4 100%);
+  background: linear-gradient(120deg, #F5F2ED 0%, #EDD0B5 38%, #E1B07E 62%, #86A397 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gradient-text-green {
-  background: linear-gradient(135deg, #5EEAD4 0%, #BEF04A 100%);
+  background: linear-gradient(135deg, #86A397 0%, #E1B07E 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* Desert Sand light panel: re-points the theme variables so components inside
+   switch to navy text, violet details and navy buttons without per-component overrides. */
+.theme-sand {
+  --background:        var(--desert-sand);
+  --surface-card:      #EBCBAE;
+  --text-primary:      var(--navy);
+  --text-secondary:    var(--midnight-violet);
+  --text-muted:        #54473F;
+  --brand-200:         var(--midnight-violet);
+  --brand-300:         var(--midnight-violet);
+  --brand-400:         var(--midnight-violet);
+  --brand-500:         var(--navy);
+  --brand-600:         var(--navy-card);
+  --accent-400:        #4F6B5F;
+  --accent-500:        #4F6B5F;
+  --primary:           var(--navy);
+  --primary-foreground: var(--warm-white);
+  --border:            rgba(11,23,35,0.14);
+  background: var(--desert-sand);
+  color: var(--text-primary);
+}
+.theme-sand .gradient-text {
+  background: linear-gradient(120deg, var(--navy) 0%, var(--midnight-violet) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.theme-sand .pill-border {
+  background:
+    linear-gradient(#EBCBAE, #EBCBAE) padding-box,
+    conic-gradient(from var(--pill-angle), rgba(54,29,46,0.15), var(--midnight-violet), rgba(54,29,46,0.15) 35%, rgba(54,29,46,0.15) 65%, var(--navy), rgba(54,29,46,0.15)) border-box;
 }
 
 /* Glow orb blur blobs */
@@ -178,8 +224,8 @@ body {
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 .bento-card:hover {
-  border-color: rgba(190,240,74,0.4);
-  box-shadow: 0 0 40px rgba(190,240,74,0.08);
+  border-color: rgba(225,176,126,0.4);
+  box-shadow: 0 0 40px rgba(225,176,126,0.08);
 }
 
 /* Noise texture overlay */
@@ -343,7 +389,7 @@ body::before {
     from calc((var(--glow-start) - var(--glow-spread, 40)) * 1deg),
     transparent 0deg,
     var(--brand-600) calc(var(--glow-spread, 40) * 0.5deg),
-    #F2F2F2 calc(var(--glow-spread, 40) * 1deg),
+    #F5F2ED calc(var(--glow-spread, 40) * 1deg),
     var(--brand-500) calc(var(--glow-spread, 40) * 1.5deg),
     transparent calc(var(--glow-spread, 40) * 2deg)
   );
@@ -361,7 +407,7 @@ body::before {
   border-radius: inherit;
   background: radial-gradient(
     420px circle at var(--glow-x, 50%) var(--glow-y, 50%),
-    rgba(190, 240, 74, 0.07),
+    rgba(225,176,126, 0.07),
     transparent 60%
   );
   opacity: var(--glow-active);
@@ -385,7 +431,7 @@ body::before {
   position: absolute;
   aspect-ratio: 1;
   width: var(--beam-size, 180px);
-  background: linear-gradient(to left, #F2F2F2, var(--brand-500), transparent);
+  background: linear-gradient(to left, #F5F2ED, var(--brand-500), transparent);
   offset-anchor: 90% 50%;
   offset-path: rect(0 auto auto 0 round var(--beam-size, 180px));
   animation: border-beam var(--beam-duration, 10s) linear infinite;
@@ -406,7 +452,7 @@ body::before {
   border: 1px solid transparent;
   background:
     linear-gradient(color-mix(in srgb, var(--background) 88%, var(--brand-500)), color-mix(in srgb, var(--background) 88%, var(--brand-500))) padding-box,
-    conic-gradient(from var(--pill-angle), rgba(190,240,74,0.15), #F2F2F2, rgba(190,240,74,0.15) 35%, rgba(190,240,74,0.15) 65%, var(--brand-400), rgba(190,240,74,0.15)) border-box;
+    conic-gradient(from var(--pill-angle), rgba(225,176,126,0.15), #F5F2ED, rgba(225,176,126,0.15) 35%, rgba(225,176,126,0.15) 65%, var(--brand-400), rgba(225,176,126,0.15)) border-box;
   animation: pill-spin 5s linear infinite;
 }
 @keyframes pill-spin {
@@ -538,20 +584,20 @@ body::before {
 }
 
 .dark {
-  --background:      #08090A;
-  --foreground:      #F4F6F0;
-  --card:      #111214;
-  --card-foreground:      #F4F6F0;
-  --popover:      #111214;
-  --popover-foreground:      #F4F6F0;
+  --background:      #0B1723;
+  --foreground:      #F5F2ED;
+  --card:      #101C2C;
+  --card-foreground:      #F5F2ED;
+  --popover:      #101C2C;
+  --popover-foreground:      #F5F2ED;
   --primary:      var(--brand-500);
-  --primary-foreground:      #0A0B07;
-  --secondary:      #18191C;
-  --secondary-foreground:      #F4F6F0;
-  --muted:      #18191C;
-  --muted-foreground:      #B9BDB4;
-  --accent:      #18191C;
-  --accent-foreground:      #F4F6F0;
+  --primary-foreground:      #0B1723;
+  --secondary:      #16263A;
+  --secondary-foreground:      #F5F2ED;
+  --muted:      #16263A;
+  --muted-foreground:      #CBC0AD;
+  --accent:      #16263A;
+  --accent-foreground:      #F5F2ED;
   --destructive:      oklch(0.704 0.191 22.216);
   --border:      rgba(255,255,255,0.09);
   --input:      rgba(255,255,255,0.12);

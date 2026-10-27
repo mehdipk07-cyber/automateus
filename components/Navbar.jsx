@@ -65,14 +65,17 @@ export default function Navbar() {
         >
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 group">
-            <Image
-              src="/logo.png"
-              alt="AutomateUs logo"
-              width={32}
-              height={32}
-              className="w-8 h-8 object-contain"
-              priority
-            />
+            {/* Light tile keeps the navy mark visible on the dark background */}
+            <span className="w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center bg-content">
+              <Image
+                src="/logo-automateus.png"
+                alt="AutomateUs logo"
+                width={32}
+                height={32}
+                className="w-8 h-8 object-contain scale-[1.6]"
+                priority
+              />
+            </span>
             <span
               className="text-xl font-bold tracking-tight"
               style={{ color: "var(--text-primary)" }}
@@ -107,7 +110,7 @@ export default function Navbar() {
                     <motion.span
                       layoutId="nav-pill"
                       className="absolute inset-0 rounded-lg"
-                      style={{ background: "rgba(190,240,74,0.1)" }}
+                      style={{ background: "rgba(225,176,126,0.1)" }}
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
                   )}
@@ -121,7 +124,7 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-3">
             <Button
               size="sm"
-              className="btn-shine h-9 rounded-full px-5 text-sm font-semibold shadow-[0_0_24px_-6px_rgba(190,240,74,0.55)]"
+              className="btn-shine h-9 rounded-full px-5 text-sm font-semibold shadow-[0_0_24px_-6px_rgba(225,176,126,0.55)]"
               render={<Link href="/contact" />}
             >
               Book Free Call
@@ -171,7 +174,7 @@ export default function Navbar() {
                     className="flex items-center gap-3 px-4 py-3 rounded-xl font-medium transition-all"
                     style={{
                       color: active ? "var(--brand-400)" : "var(--text-secondary)",
-                      background: active ? "rgba(190,240,74,0.1)" : "transparent",
+                      background: active ? "rgba(225,176,126,0.1)" : "transparent",
                     }}
                     aria-current={active ? "page" : undefined}
                   >

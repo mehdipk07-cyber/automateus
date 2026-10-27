@@ -28,7 +28,7 @@ const nodes = [
   // Actions
   { id: "slack",   label: "Slack",   x: 690, y: 60,  side: "out", color: null,      icon: SlackIcon },
   { id: "sheets",  label: "Sheets",  x: 690, y: 170, side: "out", color: "#34A853", icon: <SiGooglesheets size={20} /> },
-  { id: "notion",  label: "Notion",  x: 690, y: 280, side: "out", color: "#F4F6F0", icon: <SiNotion size={18} /> },
+  { id: "notion",  label: "Notion",  x: 690, y: 280, side: "out", color: "#F5F2ED", icon: <SiNotion size={18} /> },
 ];
 
 const logs = [
@@ -105,13 +105,13 @@ export default function WorkflowCanvas() {
                 d={path(n)}
                 pathLength="100"
                 className="flow-beam"
-                stroke={n.side === "in" ? "#BEF04A" : "#5EEAD4"}
+                stroke={n.side === "in" ? "#E1B07E" : "#86A397"}
                 strokeWidth="2"
                 strokeLinecap="round"
                 style={{
                   "--flow-delay": `${(i % 3) * 0.7 + (n.side === "out" ? 1.3 : 0)}s`,
                   "--flow-duration": "2.6s",
-                  filter: `drop-shadow(0 0 6px ${n.side === "in" ? "#BEF04A" : "#5EEAD4"})`,
+                  filter: `drop-shadow(0 0 6px ${n.side === "in" ? "#E1B07E" : "#86A397"})`,
                 }}
               />
             </g>
@@ -142,7 +142,7 @@ export default function WorkflowCanvas() {
             <div
               className="size-12 rounded-xl flex items-center justify-center border"
               style={{
-                background: "#141518",
+                background: "#101C2C",
                 borderColor: "rgba(255,255,255,0.1)",
                 color: n.color ?? undefined,
                 boxShadow: n.color ? `0 0 24px -6px ${n.color}55` : "none",
@@ -163,8 +163,10 @@ export default function WorkflowCanvas() {
         >
           <div className="relative">
             <span className="hub-ring absolute inset-0 rounded-2xl border border-brand-400/60" />
-            <div className="pill-border relative size-[76px] rounded-2xl flex items-center justify-center shadow-[0_0_60px_-10px_rgba(190,240,74,0.55)]">
-              <Image src="/logo.png" alt="" width={40} height={40} className="size-10 object-contain" />
+            <div className="pill-border relative size-[76px] rounded-2xl flex items-center justify-center shadow-[0_0_60px_-10px_rgba(225,176,126,0.55)]">
+              <span className="size-12 rounded-xl overflow-hidden flex items-center justify-center bg-content">
+                <Image src="/logo-automateus.png" alt="" width={48} height={48} className="size-12 object-contain scale-[1.6]" />
+              </span>
             </div>
           </div>
           <span className="font-mono text-[10px] text-brand-300">AutomateUs AI</span>
@@ -174,7 +176,7 @@ export default function WorkflowCanvas() {
         <div className="absolute left-4 right-4 bottom-4 flex justify-center">
           <div
             className="flex items-center gap-2.5 px-3 py-2 rounded-lg border backdrop-blur-md font-mono text-[11px] max-w-full"
-            style={{ background: "rgba(8,9,10,0.75)", borderColor: "rgba(255,255,255,0.08)" }}
+            style={{ background: "rgba(11,23,35,0.75)", borderColor: "rgba(255,255,255,0.08)" }}
           >
             <span className="flex size-4 shrink-0 items-center justify-center rounded-full bg-brand-500/15">
               <Check className="size-2.5 text-brand-400" />

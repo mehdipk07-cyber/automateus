@@ -26,8 +26,8 @@ function CopyItem({ icon: Icon, label, value, href }) {
         <div
           className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
           style={{
-            background: "rgba(190,240,74,0.1)",
-            border: "1px solid rgba(190,240,74,0.15)",
+            background: "rgba(225,176,126,0.1)",
+            border: "1px solid rgba(225,176,126,0.15)",
           }}
         >
           <Icon className="size-4" style={{ color: "var(--brand-400)" }} />
@@ -59,9 +59,9 @@ function CopyItem({ icon: Icon, label, value, href }) {
         onClick={handleCopy}
         className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-200 opacity-0 group-hover:opacity-100"
         style={{
-          background: copied ? "rgba(94,234,212,0.12)" : "rgba(255,255,255,0.05)",
+          background: copied ? "rgba(134,163,151,0.12)" : "rgba(255,255,255,0.05)",
           border: copied
-            ? "1px solid rgba(94,234,212,0.3)"
+            ? "1px solid rgba(134,163,151,0.3)"
             : "1px solid rgba(255,255,255,0.08)",
           color: copied ? "var(--accent-400)" : "var(--text-muted)",
         }}
@@ -103,8 +103,8 @@ export default function ContactSidebar() {
         <div
           className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
           style={{
-            background: "rgba(190,240,74,0.1)",
-            border: "1px solid rgba(190,240,74,0.15)",
+            background: "rgba(225,176,126,0.1)",
+            border: "1px solid rgba(225,176,126,0.15)",
           }}
         >
           <Clock className="size-4" style={{ color: "var(--brand-400)" }} />

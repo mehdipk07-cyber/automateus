@@ -82,8 +82,8 @@ function TestimonialCard({ t }) {
         &ldquo;{t.text}&rdquo;
       </blockquote>
       <span
-        className="inline-block mb-6 px-3 py-1 rounded-lg text-xs font-semibold text-[#0D0D0D]"
-        style={{ background: "linear-gradient(135deg, #BEF04A, #9FD12E)" }}
+        className="inline-block mb-6 px-3 py-1 rounded-lg text-xs font-semibold text-[#0B1723]"
+        style={{ background: "linear-gradient(135deg, #E1B07E, #C8945F)" }}
       >
         {t.stat}
       </span>

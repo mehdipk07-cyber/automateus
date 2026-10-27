@@ -106,8 +106,8 @@ function ContentBlock({ block }) {
               <span
                 className="flex-shrink-0 w-7 h-7 rounded-lg text-sm font-bold flex items-center justify-center mt-0.5"
                 style={{
-                  background: "rgba(190,240,74,0.12)",
-                  border: "1px solid rgba(190,240,74,0.2)",
+                  background: "rgba(225,176,126,0.12)",
+                  border: "1px solid rgba(225,176,126,0.2)",
                   color: "var(--brand-400)",
                 }}
               >
@@ -177,8 +177,8 @@ function ContentBlock({ block }) {
         <div
           className="my-8 rounded-xl p-6"
           style={{
-            background: "rgba(190,240,74,0.08)",
-            border: "1px solid rgba(190,240,74,0.2)",
+            background: "rgba(225,176,126,0.08)",
+            border: "1px solid rgba(225,176,126,0.2)",
           }}
         >
           <p
@@ -220,7 +220,7 @@ export default async function BlogPostPage({ params }) {
       "@type": "Organization",
       name: "AutomateUs",
       url: "https://automate-us.vercel.app",
-      logo: { "@type": "ImageObject", url: "https://automate-us.vercel.app/logo.png" },
+      logo: { "@type": "ImageObject", url: "https://automate-us.vercel.app/logo-automateus.png" },
     },
     keywords: post.keywords.join(", "),
     mainEntityOfPage: { "@type": "WebPage", "@id": `https://automate-us.vercel.app/blog/${slug}` },
@@ -304,7 +304,7 @@ export default async function BlogPostPage({ params }) {
             <div className="flex items-center gap-2.5">
               <div
                 className="w-9 h-9 rounded-full flex items-center justify-center"
-                style={{ background: "rgba(190,240,74,0.12)" }}
+                style={{ background: "rgba(225,176,126,0.12)" }}
               >
                 <User className="size-4" style={{ color: "var(--brand-400)" }} />
               </div>
@@ -405,8 +405,8 @@ export default async function BlogPostPage({ params }) {
               className="rounded-2xl p-8 text-center"
               style={{
                 background:
-                  "linear-gradient(135deg, rgba(190,240,74,0.15) 0%, rgba(190,240,74,0.04) 100%)",
-                border: "1px solid rgba(190,240,74,0.25)",
+                  "linear-gradient(135deg, rgba(225,176,126,0.15) 0%, rgba(225,176,126,0.04) 100%)",
+                border: "1px solid rgba(225,176,126,0.25)",
               }}
             >
               <h3
@@ -424,9 +424,9 @@ export default async function BlogPostPage({ params }) {
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm text-[#0D0D0D] transition-opacity hover:opacity-90"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm text-[#0B1723] transition-opacity hover:opacity-90"
                 style={{
-                  background: "linear-gradient(135deg, #BEF04A, #9FD12E)",
+                  background: "linear-gradient(135deg, #E1B07E, #C8945F)",
                 }}
               >
                 Book Your Free Call
@@ -453,7 +453,7 @@ export default async function BlogPostPage({ params }) {
                     <Link
                       key={rp.slug}
                       href={`/blog/${rp.slug}`}
-                      className="group block rounded-xl p-4 transition-all duration-200 hover:!border-[rgba(190,240,74,0.3)] hover:!bg-[rgba(190,240,74,0.04)]"
+                      className="group block rounded-xl p-4 transition-all duration-200 hover:!border-[rgba(225,176,126,0.3)] hover:!bg-[rgba(225,176,126,0.04)]"
                       style={{
                         background: "rgba(255,255,255,0.02)",
                         border: "1px solid rgba(255,255,255,0.07)",

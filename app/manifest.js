@@ -6,11 +6,10 @@ export default function manifest() {
       "Custom automation solutions that eliminate manual tasks and scale your business.",
     start_url: "/",
     display: "standalone",
-    background_color: "#08090A",
-    theme_color: "#08090A",
+    background_color: "#0B1723",
+    theme_color: "#0B1723",
     icons: [
-      { src: "/logo.png", sizes: "192x192", type: "image/png" },
-      { src: "/logo.png", sizes: "512x512", type: "image/png" },
+      { src: "/logo-automateus.png", sizes: "1254x1254", type: "image/png" },
     ],
   };
 }

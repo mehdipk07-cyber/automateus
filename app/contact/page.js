@@ -23,13 +23,13 @@ export const metadata = {
     title: "Book a Free Automation Consultation — AutomateUs",
     description: "Book a free 30-minute discovery call with AutomateUs. Tell us about your processes and we'll show you exactly how automation can save your team time and money.",
     url: "https://automate-us.vercel.app/contact",
-    images: [{ url: "/logo.png", width: 768, height: 768, alt: "Contact AutomateUs" }],
+    images: [{ url: "/logo-automateus.png", width: 1254, height: 1254, alt: "Contact AutomateUs" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Book a Free Automation Consultation — AutomateUs",
     description: "Book a free 30-minute discovery call with AutomateUs. Tell us about your processes and we'll show you exactly how automation can save your team time and money.",
-    images: ["/logo.png"],
+    images: ["/logo-automateus.png"],
   },
 };
 
@@ -61,14 +61,14 @@ export default function ContactPage() {
       <div
         className="absolute top-0 left-0 w-[600px] h-[600px] pointer-events-none"
         style={{
-          background: "radial-gradient(ellipse, rgba(190,240,74,0.10) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse, rgba(225,176,126,0.10) 0%, transparent 70%)",
           filter: "blur(80px)",
         }}
       />
       <div
         className="absolute bottom-0 right-0 w-[500px] h-[500px] pointer-events-none"
         style={{
-          background: "radial-gradient(ellipse, rgba(94,234,212,0.07) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse, rgba(134,163,151,0.07) 0%, transparent 70%)",
           filter: "blur(80px)",
         }}
       />
@@ -106,8 +106,8 @@ export default function ContactPage() {
               <div
                 className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold uppercase tracking-widest mb-6"
                 style={{
-                  background: "rgba(190,240,74,0.08)",
-                  border: "1px solid rgba(190,240,74,0.2)",
+                  background: "rgba(225,176,126,0.08)",
+                  border: "1px solid rgba(225,176,126,0.2)",
                   color: "var(--brand-400)",
                 }}
               >
@@ -139,14 +139,14 @@ export default function ContactPage() {
             <div
               className="inline-flex items-center gap-3 px-4 py-2.5 rounded-xl"
               style={{
-                background: "rgba(94,234,212,0.06)",
-                border: "1px solid rgba(94,234,212,0.2)",
+                background: "rgba(134,163,151,0.06)",
+                border: "1px solid rgba(134,163,151,0.2)",
               }}
             >
               <div className="relative flex-shrink-0">
                 <span
                   className="ping-dot relative inline-flex w-2.5 h-2.5 rounded-full"
-                  style={{ background: "#5EEAD4", color: "#5EEAD4" }}
+                  style={{ background: "#86A397", color: "#86A397" }}
                 />
               </div>
               <div>
@@ -184,8 +184,8 @@ export default function ContactPage() {
                       <div
                         className="w-9 h-9 rounded-xl flex items-center justify-center text-xs font-bold flex-shrink-0"
                         style={{
-                          background: "rgba(190,240,74,0.12)",
-                          border: "1px solid rgba(190,240,74,0.25)",
+                          background: "rgba(225,176,126,0.12)",
+                          border: "1px solid rgba(225,176,126,0.25)",
                           color: "var(--brand-400)",
                         }}
                       >
@@ -194,7 +194,7 @@ export default function ContactPage() {
                       {i < steps.length - 1 && (
                         <div
                           className="w-px flex-1 my-1"
-                          style={{ background: "rgba(190,240,74,0.15)", minHeight: "28px" }}
+                          style={{ background: "rgba(225,176,126,0.15)", minHeight: "28px" }}
                         />
                       )}
                     </div>
@@ -227,7 +227,7 @@ export default function ContactPage() {
             >
               <div className="flex gap-0.5 mb-4">
                 {[...Array(5)].map((_, i) => (
-                  <svg key={i} width="14" height="14" viewBox="0 0 14 14" fill="#BEF04A">
+                  <svg key={i} width="14" height="14" viewBox="0 0 14 14" fill="#E1B07E">
                     <path d="M7 1l1.545 3.13 3.455.503-2.5 2.437.59 3.43L7 8.885l-3.09 1.625.59-3.43L2 4.633l3.455-.503z" />
                   </svg>
                 ))}
@@ -242,8 +242,8 @@ export default function ContactPage() {
               </p>
               <div className="flex items-center gap-3">
                 <div
-                  className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold text-[#0D0D0D] flex-shrink-0"
-                  style={{ background: "linear-gradient(135deg,#BEF04A,#9FD12E)" }}
+                  className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold text-[#0B1723] flex-shrink-0"
+                  style={{ background: "linear-gradient(135deg,#E1B07E,#C8945F)" }}
                 >
                   E
                 </div>

@@ -85,13 +85,13 @@ export default function CaseStudiesPreview() {
                     <div
                       aria-hidden="true"
                       className="pointer-events-none absolute -right-16 -top-16 size-56 rounded-full blur-3xl opacity-30 transition-opacity duration-500 group-hover:opacity-50"
-                      style={{ background: i === 1 ? "#5EEAD4" : "#BEF04A" }}
+                      style={{ background: i === 1 ? "#86A397" : "#E1B07E" }}
                     />
                     <div className="relative flex items-center justify-between mb-10">
                       <span className="font-mono text-[10px] uppercase tracking-[0.2em]" style={{ color: cs.accent }}>
                         {cs.tag}
                       </span>
-                      <span className="flex size-8 items-center justify-center rounded-full border border-white/10 text-[var(--text-muted)] transition-all duration-300 group-hover:rotate-45 group-hover:border-brand-400/50 group-hover:bg-brand-500 group-hover:text-[#0A0B07]">
+                      <span className="flex size-8 items-center justify-center rounded-full border border-white/10 text-[var(--text-muted)] transition-all duration-300 group-hover:rotate-45 group-hover:border-brand-400/50 group-hover:bg-brand-500 group-hover:text-[#0B1723]">
                         <ArrowUpRight className="size-4" />
                       </span>
                     </div>

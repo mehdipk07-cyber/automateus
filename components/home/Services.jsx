@@ -13,14 +13,14 @@ function FlowVisual() {
   return (
     <div className="relative flex items-center justify-between px-6 sm:px-10 w-full">
       <div className="absolute left-10 right-10 sm:left-16 sm:right-16 top-1/2 h-px bg-white/10">
-        <span className="travel-dot absolute top-1/2 -translate-x-1/2 -translate-y-1/2 size-2 rounded-full bg-brand-400 shadow-[0_0_12px_#CFF56A]" />
+        <span className="travel-dot absolute top-1/2 -translate-x-1/2 -translate-y-1/2 size-2 rounded-full bg-brand-400 shadow-[0_0_12px_#E5BE9E]" />
       </div>
       {steps.map((s, i) => (
         <div
           key={s}
           className={cn(
-            "relative z-10 rounded-lg border px-3 py-2 font-mono text-[11px] bg-[#141518]",
-            i === 2 ? "border-brand-400/50 text-brand-300 shadow-[0_0_24px_-6px_rgba(190,240,74,0.6)]" : "border-white/10 text-[var(--text-secondary)]"
+            "relative z-10 rounded-lg border px-3 py-2 font-mono text-[11px] bg-[#101C2C]",
+            i === 2 ? "border-brand-400/50 text-brand-300 shadow-[0_0_24px_-6px_rgba(225,176,126,0.6)]" : "border-white/10 text-[var(--text-secondary)]"
           )}
         >
           {s}
@@ -112,7 +112,7 @@ function BarsVisual() {
 
 function CodeVisual() {
   return (
-    <div className="w-full max-w-sm rounded-xl border border-white/10 bg-[#0B0C0D] p-4 font-mono text-[11px] leading-6">
+    <div className="w-full max-w-sm rounded-xl border border-white/10 bg-[#0E1A28] p-4 font-mono text-[11px] leading-6">
       <div><span className="text-accent-400">POST</span> <span className="text-[var(--text-secondary)]">/webhooks/orders</span></div>
       <div className="text-[var(--text-muted)]">  → transform(payload)</div>
       <div className="text-[var(--text-muted)]">  → sync(erp, crm, sheets)</div>
@@ -212,7 +212,7 @@ function ServiceCard({ service }) {
                 {service.title}
               </h3>
             </div>
-            <span className="flex size-8 shrink-0 items-center justify-center rounded-full border border-white/10 text-[var(--text-muted)] transition-all duration-300 group-hover:rotate-45 group-hover:border-brand-400/50 group-hover:bg-brand-500 group-hover:text-[#0A0B07]">
+            <span className="flex size-8 shrink-0 items-center justify-center rounded-full border border-white/10 text-[var(--text-muted)] transition-all duration-300 group-hover:rotate-45 group-hover:border-brand-400/50 group-hover:bg-brand-500 group-hover:text-[#0B1723]">
               <ArrowUpRight className="size-4" />
             </span>
           </div>
@@ -246,7 +246,7 @@ export default function Services() {
           <div className="flex flex-col sm:flex-row gap-3 shrink-0">
             <Button
               size="lg"
-              className="btn-shine h-auto rounded-full px-7 py-3.5 font-semibold shadow-[0_0_32px_-8px_rgba(190,240,74,0.55)]"
+              className="btn-shine h-auto rounded-full px-7 py-3.5 font-semibold shadow-[0_0_32px_-8px_rgba(225,176,126,0.55)]"
               render={<Link href="/contact" />}
             >
               Start Automating

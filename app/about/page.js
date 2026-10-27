@@ -23,13 +23,13 @@ export const metadata = {
     title: "About AutomateUs — Custom Automation Agency",
     description: "Learn about AutomateUs — our mission, values, and why hundreds of businesses trust us to build their automation systems.",
     url: "https://automate-us.vercel.app/about",
-    images: [{ url: "/logo.png", width: 768, height: 768, alt: "About AutomateUs" }],
+    images: [{ url: "/logo-automateus.png", width: 1254, height: 1254, alt: "About AutomateUs" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "About AutomateUs — Custom Automation Agency",
     description: "Learn about AutomateUs — our mission, values, and why hundreds of businesses trust us to build their automation systems.",
-    images: ["/logo.png"],
+    images: ["/logo-automateus.png"],
   },
 };
 
@@ -114,13 +114,13 @@ export default function AboutPage() {
             <Badge variant="outline" className="mb-6 border-brand-500/20 bg-brand-500/10 px-3 py-1 text-xs tracking-widest text-brand-400 uppercase">
               About AutomateUs
             </Badge>
-            <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6">
+            <h1 className="text-5xl lg:text-6xl font-bold text-content mb-6">
               We Help Businesses{" "}
               <span className="gradient-text accent-serif">Work Smarter</span>
             </h1>
             <BlurText
               text="AutomateUs is a specialist automation agency focused on helping growing businesses eliminate manual work, reduce costs, and scale faster through custom automation solutions."
-              className="text-xl text-gray-400 max-w-2xl mx-auto justify-center"
+              className="text-xl text-content-secondary max-w-2xl mx-auto justify-center"
               delay={40}
               stepDuration={0.4}
             />
@@ -159,7 +159,7 @@ export default function AboutPage() {
             <div className="absolute inset-0 flex items-center px-10 lg:px-16">
               <div>
                 <p className="text-brand-400 text-sm font-semibold uppercase tracking-widest mb-2">Our Team</p>
-                <h3 className="text-white text-3xl lg:text-4xl font-bold max-w-sm leading-tight">
+                <h3 className="text-content text-3xl lg:text-4xl font-bold max-w-sm leading-tight">
                   People who love what automation can do
                 </h3>
               </div>
@@ -180,11 +180,11 @@ export default function AboutPage() {
                   <path d="M12 3v2M12 19v2M3 12h2M19 12h2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
                 </svg>
               </div>
-              <h2 className="text-2xl font-bold text-white mb-4">Our Mission</h2>
-              <p className="text-gray-400 leading-relaxed">
+              <h2 className="text-2xl font-bold text-content mb-4">Our Mission</h2>
+              <p className="text-content-secondary leading-relaxed">
                 To help businesses of every size work smarter through automation. We believe no team should spend their best hours on repetitive, manual tasks when the right technology can handle it reliably and at scale.
               </p>
-              <p className="text-gray-400 leading-relaxed mt-4">
+              <p className="text-content-secondary leading-relaxed mt-4">
                 We partner with operations leaders, founders, and teams who are ready to stop wasting time and start building a more efficient, scalable business.
               </p>
             </Card>
@@ -197,11 +197,11 @@ export default function AboutPage() {
                   <path d="M19 3l2 2-8 8M21 3h-4v4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <h2 className="text-2xl font-bold text-white mb-4">Our Vision</h2>
-              <p className="text-gray-400 leading-relaxed">
+              <h2 className="text-2xl font-bold text-content mb-4">Our Vision</h2>
+              <p className="text-content-secondary leading-relaxed">
                 To become the most trusted automation partner for growing companies — the team businesses call when they want to do more with less, without sacrificing quality or control.
               </p>
-              <p className="text-gray-400 leading-relaxed mt-4">
+              <p className="text-content-secondary leading-relaxed mt-4">
                 We envision a world where automation is accessible to every business, not just enterprises with large IT budgets and development teams.
               </p>
             </Card>
@@ -216,7 +216,7 @@ export default function AboutPage() {
             <Badge variant="outline" className="mb-4 border-brand-500/20 bg-brand-500/10 px-3 py-1 text-xs tracking-widest text-brand-400 uppercase">
               Our Values
             </Badge>
-            <h2 className="text-4xl font-bold text-white">What We Stand For</h2>
+            <h2 className="text-4xl font-bold text-content">What We Stand For</h2>
           </FadeUp>
           <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
             {values.map((v) => (
@@ -225,8 +225,8 @@ export default function AboutPage() {
                   <div className="w-14 h-14 rounded-lg bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-brand-400 mx-auto mb-4">
                     {v.icon}
                   </div>
-                  <h3 className="text-white font-semibold text-lg mb-2">{v.title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{v.desc}</p>
+                  <h3 className="text-content font-semibold text-lg mb-2">{v.title}</h3>
+                  <p className="text-content-muted text-sm leading-relaxed">{v.desc}</p>
                 </Card>
               </StaggerItem>
             ))}
@@ -240,8 +240,8 @@ export default function AboutPage() {
           <Badge variant="outline" className="mb-4 border-accent-500/20 bg-accent-500/10 px-3 py-1 text-xs tracking-widest text-accent-400 uppercase">
             Why Choose Us
           </Badge>
-          <h2 className="text-4xl font-bold text-white">Built Different</h2>
-          <p className="text-gray-400 text-lg mt-4 max-w-2xl mx-auto">
+          <h2 className="text-4xl font-bold text-content">Built Different</h2>
+          <p className="text-content-secondary text-lg mt-4 max-w-2xl mx-auto">
             We&apos;re not a generic digital agency that does automation as a side offering. Automation is all we do.
           </p>
         </FadeUp>
@@ -255,8 +255,8 @@ export default function AboutPage() {
                     <path d="M3 9l4 4 8-8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
-                <h3 className="text-white font-semibold text-lg mb-2">{r.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{r.desc}</p>
+                <h3 className="text-content font-semibold text-lg mb-2">{r.title}</h3>
+                <p className="text-content-muted text-sm leading-relaxed">{r.desc}</p>
               </Card>
             </StaggerItem>
           ))}
@@ -267,8 +267,8 @@ export default function AboutPage() {
       <section className="py-24 bg-surface-800/30">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeUp>
-            <h2 className="text-4xl font-bold text-white mb-4">Ready to Work With Us?</h2>
-            <p className="text-gray-400 text-lg mb-8">Book a free discovery call and let&apos;s figure out how automation can transform your operations.</p>
+            <h2 className="text-4xl font-bold text-content mb-4">Ready to Work With Us?</h2>
+            <p className="text-content-secondary text-lg mb-8">Book a free discovery call and let&apos;s figure out how automation can transform your operations.</p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button size="lg" className="h-auto px-8 py-4" render={<Link href="/contact" />}>
                 Book a Free Consultation

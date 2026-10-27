@@ -22,8 +22,8 @@ export async function POST(request) {
       : "Not specified";
 
     const html = `
-      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #0D0D0D; color: #F2F2F2; border-radius: 12px; overflow: hidden;">
-        <div style="background: linear-gradient(135deg, #BEF04A, #9FD12E); padding: 28px 32px;">
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #0B1723; color: #F5F2ED; border-radius: 12px; overflow: hidden;">
+        <div style="background: linear-gradient(135deg, #E1B07E, #C8945F); padding: 28px 32px;">
           <h1 style="margin: 0; font-size: 22px; color: #ffffff;">New Consultation Request</h1>
           <p style="margin: 6px 0 0; color: rgba(255,255,255,0.75); font-size: 14px;">AutomateUs Contact Form</p>
         </div>
@@ -31,43 +31,43 @@ export async function POST(request) {
         <div style="padding: 32px;">
           <table style="width: 100%; border-collapse: collapse;">
             <tr>
-              <td style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.07); color: #8C8C8C; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; width: 140px;">Name</td>
-              <td style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.07); color: #F2F2F2; font-size: 14px; font-weight: 600;">${name}</td>
+              <td style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.07); color: #9C9A94; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; width: 140px;">Name</td>
+              <td style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.07); color: #F5F2ED; font-size: 14px; font-weight: 600;">${name}</td>
             </tr>
             ${company ? `
             <tr>
-              <td style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.07); color: #8C8C8C; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em;">Company</td>
-              <td style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.07); color: #F2F2F2; font-size: 14px;">${company}</td>
+              <td style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.07); color: #9C9A94; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em;">Company</td>
+              <td style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.07); color: #F5F2ED; font-size: 14px;">${company}</td>
             </tr>` : ""}
             <tr>
-              <td style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.07); color: #8C8C8C; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em;">Email</td>
-              <td style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.07); color: #CFF56A; font-size: 14px;"><a href="mailto:${email}" style="color: #CFF56A;">${email}</a></td>
+              <td style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.07); color: #9C9A94; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em;">Email</td>
+              <td style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.07); color: #E5BE9E; font-size: 14px;"><a href="mailto:${email}" style="color: #E5BE9E;">${email}</a></td>
             </tr>
             ${phone ? `
             <tr>
-              <td style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.07); color: #8C8C8C; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em;">Phone</td>
-              <td style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.07); color: #F2F2F2; font-size: 14px;">${phone}</td>
+              <td style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.07); color: #9C9A94; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em;">Phone</td>
+              <td style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.07); color: #F5F2ED; font-size: 14px;">${phone}</td>
             </tr>` : ""}
             <tr>
-              <td style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.07); color: #8C8C8C; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em;">Services</td>
-              <td style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.07); color: #F2F2F2; font-size: 14px;">${servicesText}</td>
+              <td style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.07); color: #9C9A94; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em;">Services</td>
+              <td style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.07); color: #F5F2ED; font-size: 14px;">${servicesText}</td>
             </tr>
             ${budget ? `
             <tr>
-              <td style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.07); color: #8C8C8C; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em;">Budget</td>
-              <td style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.07); color: #5EEAD4; font-size: 14px; font-weight: 600;">${budget}</td>
+              <td style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.07); color: #9C9A94; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em;">Budget</td>
+              <td style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.07); color: #86A397; font-size: 14px; font-weight: 600;">${budget}</td>
             </tr>` : ""}
           </table>
 
           <div style="margin-top: 24px;">
-            <p style="color: #8C8C8C; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 10px;">Automation Challenge</p>
-            <div style="background: rgba(190,240,74,0.08); border: 1px solid rgba(190,240,74,0.2); border-radius: 8px; padding: 16px;">
-              <p style="color: #F2F2F2; font-size: 14px; line-height: 1.7; margin: 0;">${challenge.replace(/\n/g, "<br>")}</p>
+            <p style="color: #9C9A94; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 10px;">Automation Challenge</p>
+            <div style="background: rgba(225,176,126,0.08); border: 1px solid rgba(225,176,126,0.2); border-radius: 8px; padding: 16px;">
+              <p style="color: #F5F2ED; font-size: 14px; line-height: 1.7; margin: 0;">${challenge.replace(/\n/g, "<br>")}</p>
             </div>
           </div>
 
           <div style="margin-top: 28px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.07);">
-            <a href="mailto:${email}" style="display: inline-block; background: linear-gradient(135deg, #BEF04A, #9FD12E); color: #ffffff; text-decoration: none; padding: 12px 24px; border-radius: 8px; font-size: 14px; font-weight: 600;">Reply to ${name}</a>
+            <a href="mailto:${email}" style="display: inline-block; background: linear-gradient(135deg, #E1B07E, #C8945F); color: #ffffff; text-decoration: none; padding: 12px 24px; border-radius: 8px; font-size: 14px; font-weight: 600;">Reply to ${name}</a>
           </div>
         </div>
 

@@ -16,7 +16,7 @@ const posts = [
     date: "Jun 10, 2026",
     slug: "10-processes-to-automate-first",
     featured: true,
-    categoryColor: "#BEF04A",
+    categoryColor: "#E1B07E",
     image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=900&h=500&fit=crop&q=80",
   },
   {
@@ -56,7 +56,7 @@ const posts = [
     readTime: "6 min read",
     date: "May 14, 2026",
     slug: "20-hours-saved-case-study",
-    categoryColor: "#F2F2F2",
+    categoryColor: "#F5F2ED",
     image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop&q=80",
   },
   {
@@ -76,7 +76,7 @@ const posts = [
     readTime: "10 min read",
     date: "Jul 18, 2026",
     slug: "automate-client-onboarding",
-    categoryColor: "#BEF04A",
+    categoryColor: "#E1B07E",
     image: "https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=600&h=400&fit=crop&q=80",
   },
 ];
@@ -149,13 +149,13 @@ export default function BlogContent() {
               className="rounded-full px-4 py-2 text-sm font-medium transition-all duration-200"
               style={{
                 background: isActive
-                  ? "linear-gradient(135deg, #BEF04A, #9FD12E)"
+                  ? "linear-gradient(135deg, #E1B07E, #C8945F)"
                   : "rgba(255,255,255,0.04)",
                 border: isActive
-                  ? "1px solid rgba(190,240,74,0.4)"
+                  ? "1px solid rgba(225,176,126,0.4)"
                   : "1px solid rgba(255,255,255,0.08)",
-                color: isActive ? "#0D0D0D" : "var(--text-muted)",
-                boxShadow: isActive ? "0 0 16px rgba(190,240,74,0.25)" : "none",
+                color: isActive ? "#0B1723" : "var(--text-muted)",
+                boxShadow: isActive ? "0 0 16px rgba(225,176,126,0.25)" : "none",
               }}
             >
               {cat}
@@ -184,16 +184,16 @@ export default function BlogContent() {
                       {activeCategory === "All" ? "Featured" : featured.category}
                     </Badge>
                     {activeCategory === "All" && (
-                      <span className="text-xs text-gray-500 uppercase tracking-wider">
+                      <span className="text-xs text-content-muted uppercase tracking-wider">
                         {featured.category}
                       </span>
                     )}
                   </div>
-                  <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4 group-hover:text-brand-200 transition-colors leading-snug">
+                  <h2 className="text-2xl lg:text-3xl font-bold text-content mb-4 group-hover:text-brand-200 transition-colors leading-snug">
                     {featured.title}
                   </h2>
-                  <p className="text-gray-400 leading-relaxed mb-6">{featured.desc}</p>
-                  <div className="flex items-center gap-4 text-sm text-gray-500">
+                  <p className="text-content-secondary leading-relaxed mb-6">{featured.desc}</p>
+                  <div className="flex items-center gap-4 text-sm text-content-muted">
                     <span>{featured.date}</span>
                     <span>·</span>
                     <span>{featured.readTime}</span>
@@ -220,11 +220,11 @@ export default function BlogContent() {
                     >
                       {post.category}
                     </span>
-                    <h3 className="text-white font-semibold text-lg mb-3 group-hover:text-brand-200 transition-colors leading-snug flex-1">
+                    <h3 className="text-content font-semibold text-lg mb-3 group-hover:text-brand-200 transition-colors leading-snug flex-1">
                       {post.title}
                     </h3>
-                    <p className="text-gray-500 text-sm leading-relaxed mb-4">{post.desc}</p>
-                    <div className="flex items-center gap-3 text-xs text-gray-600">
+                    <p className="text-content-muted text-sm leading-relaxed mb-4">{post.desc}</p>
+                    <div className="flex items-center gap-3 text-xs text-content-muted">
                       <span>{post.date}</span>
                       <span>·</span>
                       <span>{post.readTime}</span>

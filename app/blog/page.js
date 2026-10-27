@@ -21,13 +21,13 @@ export const metadata = {
     title: "Blog | Automation Tips, AI Workflows & Productivity — AutomateUs",
     description: "Practical automation strategies, tool guides, and productivity insights from the AutomateUs team.",
     url: "https://automate-us.vercel.app/blog",
-    images: [{ url: "/logo.png", width: 768, height: 768, alt: "AutomateUs Blog" }],
+    images: [{ url: "/logo-automateus.png", width: 1254, height: 1254, alt: "AutomateUs Blog" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Blog | Automation Tips, AI Workflows & Productivity — AutomateUs",
     description: "Practical automation strategies, tool guides, and productivity insights from the AutomateUs team.",
-    images: ["/logo.png"],
+    images: ["/logo-automateus.png"],
   },
 };
 
@@ -41,11 +41,11 @@ export default function BlogPage() {
             <Badge variant="outline" className="mb-6 border-brand-500/20 bg-brand-500/10 px-3 py-1 text-xs tracking-widest text-brand-400 uppercase">
               The AutomateUs Blog
             </Badge>
-            <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6">
+            <h1 className="text-5xl lg:text-6xl font-bold text-content mb-6">
               Automation Insights &{" "}
               <span className="gradient-text accent-serif">Practical Guides</span>
             </h1>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            <p className="text-xl text-content-secondary max-w-2xl mx-auto">
               Real strategies and step-by-step tutorials from a team that builds automations every day.
             </p>
           </FadeUp>

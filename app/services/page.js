@@ -27,13 +27,13 @@ export const metadata = {
     description:
       "Explore AutomateUs's full range of automation services — from workflow and AI automation to Monday.com, Make.com, Zapier, CRM, and custom API integrations.",
     url: "https://automate-us.vercel.app/services",
-    images: [{ url: "/logo.png", width: 768, height: 768, alt: "AutomateUs Services" }],
+    images: [{ url: "/logo-automateus.png", width: 1254, height: 1254, alt: "AutomateUs Services" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Services | Workflow, AI & CRM Automation — AutomateUs",
     description: "Explore AutomateUs's full range of automation services — from workflow and AI automation to Monday.com, Make.com, Zapier, CRM, and custom API integrations.",
-    images: ["/logo.png"],
+    images: ["/logo-automateus.png"],
   },
 };
 
@@ -257,13 +257,13 @@ export default function ServicesPage() {
             <Badge variant="outline" className="mb-6 border-brand-500/20 bg-brand-500/10 px-3 py-1 text-xs tracking-widest text-brand-400 uppercase">
               Our Services
             </Badge>
-            <h1 className="text-5xl lg:text-6xl font-bold text-white mb-6">
+            <h1 className="text-5xl lg:text-6xl font-bold text-content mb-6">
               Every Automation Service{" "}
               <span className="gradient-text accent-serif">Your Business Needs</span>
             </h1>
             <BlurText
               text="From simple Zapier workflows to complex AI-powered systems — we design, build, and maintain automation solutions that scale with your business."
-              className="text-xl text-gray-400 max-w-2xl mx-auto mb-10 justify-center"
+              className="text-xl text-content-secondary max-w-2xl mx-auto mb-10 justify-center"
               delay={35}
               stepDuration={0.4}
             />
@@ -285,13 +285,13 @@ export default function ServicesPage() {
                 <div className={i % 2 === 1 ? "lg:col-start-2" : ""}>
                   <div className="text-brand-400 mb-5">{s.icon}</div>
                   <span className="text-sm font-semibold text-brand-400 uppercase tracking-widest">{s.tagline}</span>
-                  <h2 className="text-4xl font-bold text-white mt-2 mb-4">{s.title}</h2>
-                  <p className="text-gray-400 leading-relaxed mb-8">{s.desc}</p>
+                  <h2 className="text-4xl font-bold text-content mt-2 mb-4">{s.title}</h2>
+                  <p className="text-content-secondary leading-relaxed mb-8">{s.desc}</p>
 
-                  <h4 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">What&apos;s Included</h4>
+                  <h4 className="text-content font-semibold text-sm uppercase tracking-wider mb-4">What&apos;s Included</h4>
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-8">
                     {s.capabilities.map((cap) => (
-                      <li key={cap} className="flex items-center gap-2 text-gray-400 text-sm">
+                      <li key={cap} className="flex items-center gap-2 text-content-secondary text-sm">
                         <Check className="size-3.5 flex-shrink-0 text-accent-400" />
                         {cap}
                       </li>
@@ -307,12 +307,12 @@ export default function ServicesPage() {
                 {/* Card */}
                 <div className={i % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""}>
                   <Card className="rounded-lg p-8 ring-0 border border-border">
-                    <h4 className="text-white font-semibold text-sm uppercase tracking-wider mb-5 text-gray-400">
+                    <h4 className="text-content font-semibold text-sm uppercase tracking-wider mb-5 text-content-secondary">
                       Common Use Cases
                     </h4>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       {s.useCases.map((uc) => (
-                        <div key={uc} className="px-4 py-3 rounded-xl bg-white/5 border border-white/5 text-gray-300 text-sm font-medium">
+                        <div key={uc} className="px-4 py-3 rounded-xl bg-white/5 border border-white/5 text-content-secondary text-sm font-medium">
                           {uc}
                         </div>
                       ))}
@@ -329,8 +329,8 @@ export default function ServicesPage() {
       <section className="py-24 bg-surface-800/30">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeUp>
-            <h2 className="text-4xl font-bold text-white mb-4">Not Sure Where to Start?</h2>
-            <p className="text-gray-400 text-lg mb-8">
+            <h2 className="text-4xl font-bold text-content mb-4">Not Sure Where to Start?</h2>
+            <p className="text-content-secondary text-lg mb-8">
               Book a free discovery call and we&apos;ll identify the highest-ROI automations for your specific business.
             </p>
             <Button size="lg" className="h-auto px-10 py-5 text-lg font-bold" render={<Link href="/contact" />}>
