@@ -4,10 +4,10 @@ export default function robots() {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/", "/_next/"],
+        disallow: ["/api/"],
       },
     ],
-    sitemap: "https://automate-us.vercel.app/sitemap.xml",
-    host: "https://automate-us.vercel.app",
+    sitemap: "https://automateus.net/sitemap.xml",
+    host: "https://automateus.net",
   };
 }

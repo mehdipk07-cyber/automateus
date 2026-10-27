@@ -41,7 +41,7 @@ export async function generateMetadata({ params }) {
       description: post.description,
       images: [post.coverImage],
     },
-    alternates: { canonical: `https://automate-us.vercel.app/blog/${slug}` },
+    alternates: { canonical: `https://automateus.net/blog/${slug}` },
   };
 }
 
@@ -219,20 +219,20 @@ export default async function BlogPostPage({ params }) {
     publisher: {
       "@type": "Organization",
       name: "AutomateUs",
-      url: "https://automate-us.vercel.app",
-      logo: { "@type": "ImageObject", url: "https://automate-us.vercel.app/logo-automateus.png" },
+      url: "https://automateus.net",
+      logo: { "@type": "ImageObject", url: "https://automateus.net/logo-automateus.png" },
     },
     keywords: post.keywords.join(", "),
-    mainEntityOfPage: { "@type": "WebPage", "@id": `https://automate-us.vercel.app/blog/${slug}` },
+    mainEntityOfPage: { "@type": "WebPage", "@id": `https://automateus.net/blog/${slug}` },
   };
 
   const breadcrumbLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home",  item: "https://automate-us.vercel.app" },
-      { "@type": "ListItem", position: 2, name: "Blog",  item: "https://automate-us.vercel.app/blog" },
-      { "@type": "ListItem", position: 3, name: post.title, item: `https://automate-us.vercel.app/blog/${slug}` },
+      { "@type": "ListItem", position: 1, name: "Home",  item: "https://automateus.net" },
+      { "@type": "ListItem", position: 2, name: "Blog",  item: "https://automateus.net/blog" },
+      { "@type": "ListItem", position: 3, name: post.title, item: `https://automateus.net/blog/${slug}` },
     ],
   };
 

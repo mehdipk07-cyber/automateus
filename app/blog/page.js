@@ -16,11 +16,11 @@ export const metadata = {
     "business productivity",
     "no-code automation",
   ],
-  alternates: { canonical: "https://automate-us.vercel.app/blog" },
+  alternates: { canonical: "https://automateus.net/blog" },
   openGraph: {
     title: "Blog | Automation Tips, AI Workflows & Productivity — AutomateUs",
     description: "Practical automation strategies, tool guides, and productivity insights from the AutomateUs team.",
-    url: "https://automate-us.vercel.app/blog",
+    url: "https://automateus.net/blog",
     images: [{ url: "/logo-automateus.png", width: 1254, height: 1254, alt: "AutomateUs Blog" }],
   },
   twitter: {

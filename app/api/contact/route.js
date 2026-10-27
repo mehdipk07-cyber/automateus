@@ -72,7 +72,7 @@ export async function POST(request) {
         </div>
 
         <div style="padding: 20px 32px; background: rgba(255,255,255,0.02); border-top: 1px solid rgba(255,255,255,0.06);">
-          <p style="margin: 0; color: #3f3f46; font-size: 12px;">Sent from the AutomateUs contact form · automate-us.vercel.app</p>
+          <p style="margin: 0; color: #3f3f46; font-size: 12px;">Sent from the AutomateUs contact form · automateus.net</p>
         </div>
       </div>
     `;
@@ -89,7 +89,7 @@ export async function POST(request) {
           AutomateUs
         </p>
         <p style="font-size: 12px; color: #999; border-top: 1px solid #eee; padding-top: 16px; margin: 0;">
-          automate-us.vercel.app
+          automateus.net
         </p>
       </div>
     `;

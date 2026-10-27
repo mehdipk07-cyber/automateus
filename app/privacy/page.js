@@ -4,11 +4,11 @@ export const metadata = {
   title: "Privacy Policy",
   description:
     "How AutomateUs collects, uses, and protects the information you share through our website, contact form, and call booking.",
-  alternates: { canonical: "https://automate-us.vercel.app/privacy" },
+  alternates: { canonical: "https://automateus.net/privacy" },
   openGraph: {
     title: "Privacy Policy | AutomateUs",
     description: "How AutomateUs collects, uses, and protects your information.",
-    url: "https://automate-us.vercel.app/privacy",
+    url: "https://automateus.net/privacy",
   },
 };
 

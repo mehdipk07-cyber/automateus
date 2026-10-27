@@ -23,12 +23,12 @@ export const metadata = {
     "eliminate manual tasks",
     "process automation",
   ],
-  alternates: { canonical: "https://automate-us.vercel.app" },
+  alternates: { canonical: "https://automateus.net" },
   openGraph: {
     title: "AutomateUs | Automate Repetitive Work. Scale Faster.",
     description:
       "AutomateUs builds custom automations that eliminate manual tasks, reduce operational costs, and help your team focus on high-value work.",
-    url: "https://automate-us.vercel.app",
+    url: "https://automateus.net",
     images: [{ url: "/logo-automateus.png", width: 1254, height: 1254, alt: "AutomateUs — Custom Automation Agency" }],
   },
   twitter: {

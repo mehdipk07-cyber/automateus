@@ -24,7 +24,7 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://automate-us.vercel.app"),
+  metadataBase: new URL("https://automateus.net"),
   title: {
     default: "AutomateUs | Custom Automation Agency",
     template: "%s | AutomateUs",
@@ -49,7 +49,7 @@ export const metadata = {
       "We build custom automations that eliminate manual tasks, reduce operational costs, and help your team focus on high-value work.",
     type: "website",
     locale: "en_US",
-    url: "https://automate-us.vercel.app",
+    url: "https://automateus.net",
     siteName: "AutomateUs",
     images: [
       {
@@ -72,17 +72,17 @@ export const metadata = {
     follow: true,
     googleBot: { index: true, follow: true, "max-image-preview": "large" },
   },
-  alternates: { canonical: "https://automate-us.vercel.app" },
+  alternates: { canonical: "https://automateus.net" },
 };
 
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "AutomateUs",
-  url: "https://automate-us.vercel.app",
+  url: "https://automateus.net",
   potentialAction: {
     "@type": "SearchAction",
-    target: { "@type": "EntryPoint", urlTemplate: "https://automate-us.vercel.app/blog?q={search_term_string}" },
+    target: { "@type": "EntryPoint", urlTemplate: "https://automateus.net/blog?q={search_term_string}" },
     "query-input": "required name=search_term_string",
   },
 };
@@ -91,8 +91,8 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   name: "AutomateUs",
-  url: "https://automate-us.vercel.app",
-  logo: "https://automate-us.vercel.app/logo-automateus.png",
+  url: "https://automateus.net",
+  logo: "https://automateus.net/logo-automateus.png",
   description:
     "AutomateUs helps businesses eliminate repetitive tasks and streamline operations through custom automation solutions using Make.com, Zapier, Monday.com, and AI.",
   email: "alihassankhaliq20@gmail.com",

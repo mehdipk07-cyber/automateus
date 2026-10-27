@@ -1,6 +1,6 @@
 import { getAllSlugs } from "@/lib/posts";
 
-const BASE = "https://automate-us.vercel.app";
+const BASE = "https://automateus.net";
 
 export default function sitemap() {
   const staticPages = [

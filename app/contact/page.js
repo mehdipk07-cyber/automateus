@@ -18,11 +18,11 @@ export const metadata = {
     "automation agency contact",
     "hire automation expert",
   ],
-  alternates: { canonical: "https://automate-us.vercel.app/contact" },
+  alternates: { canonical: "https://automateus.net/contact" },
   openGraph: {
     title: "Book a Free Automation Consultation — AutomateUs",
     description: "Book a free 30-minute discovery call with AutomateUs. Tell us about your processes and we'll show you exactly how automation can save your team time and money.",
-    url: "https://automate-us.vercel.app/contact",
+    url: "https://automateus.net/contact",
     images: [{ url: "/logo-automateus.png", width: 1254, height: 1254, alt: "Contact AutomateUs" }],
   },
   twitter: {

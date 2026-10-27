@@ -19,11 +19,11 @@ export const metadata = {
     "automation success stories",
     "time saved with automation",
   ],
-  alternates: { canonical: "https://automate-us.vercel.app/case-studies" },
+  alternates: { canonical: "https://automateus.net/case-studies" },
   openGraph: {
     title: "Case Studies | Real Automation Results — AutomateUs",
     description: "See how AutomateUs has helped businesses save thousands of hours, reduce costs, and scale operations with custom automation solutions.",
-    url: "https://automate-us.vercel.app/case-studies",
+    url: "https://automateus.net/case-studies",
     images: [{ url: "/logo-automateus.png", width: 1254, height: 1254, alt: "AutomateUs Case Studies" }],
   },
   twitter: {

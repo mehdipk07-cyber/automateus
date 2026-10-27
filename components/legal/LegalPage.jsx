@@ -4,7 +4,7 @@ import { SectionBadge } from "@/components/ui/section-badge";
 /* Business details shared by the Privacy Policy and Terms of Service */
 export const LEGAL = {
   business: "AutomateUs",
-  site: "automate-us.vercel.app",
+  site: "automateus.net",
   email: "alihassankhaliq20@gmail.com",
   jurisdiction: "Pakistan",
   effective: "October 23, 2026",

@@ -21,12 +21,12 @@ export const metadata = {
     "custom API integration",
     "business process automation",
   ],
-  alternates: { canonical: "https://automate-us.vercel.app/services" },
+  alternates: { canonical: "https://automateus.net/services" },
   openGraph: {
     title: "Services | Workflow, AI & CRM Automation — AutomateUs",
     description:
       "Explore AutomateUs's full range of automation services — from workflow and AI automation to Monday.com, Make.com, Zapier, CRM, and custom API integrations.",
-    url: "https://automate-us.vercel.app/services",
+    url: "https://automateus.net/services",
     images: [{ url: "/logo-automateus.png", width: 1254, height: 1254, alt: "AutomateUs Services" }],
   },
   twitter: {
@@ -229,7 +229,7 @@ const servicesSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
   name: "AutomateUs Services",
-  url: "https://automate-us.vercel.app/services",
+  url: "https://automateus.net/services",
   itemListElement: services.map((s, i) => ({
     "@type": "ListItem",
     position: i + 1,
@@ -237,8 +237,8 @@ const servicesSchema = {
       "@type": "Service",
       name: s.title,
       description: s.tagline,
-      provider: { "@type": "Organization", name: "AutomateUs", url: "https://automate-us.vercel.app" },
-      url: `https://automate-us.vercel.app/services#${s.id}`,
+      provider: { "@type": "Organization", name: "AutomateUs", url: "https://automateus.net" },
+      url: `https://automateus.net/services#${s.id}`,
     },
   })),
 };

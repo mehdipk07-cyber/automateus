@@ -18,11 +18,11 @@ export const metadata = {
     "workflow automation experts",
     "automation consulting firm",
   ],
-  alternates: { canonical: "https://automate-us.vercel.app/about" },
+  alternates: { canonical: "https://automateus.net/about" },
   openGraph: {
     title: "About AutomateUs — Custom Automation Agency",
     description: "Learn about AutomateUs — our mission, values, and why hundreds of businesses trust us to build their automation systems.",
-    url: "https://automate-us.vercel.app/about",
+    url: "https://automateus.net/about",
     images: [{ url: "/logo-automateus.png", width: 1254, height: 1254, alt: "About AutomateUs" }],
   },
   twitter: {

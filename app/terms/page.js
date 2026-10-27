@@ -4,11 +4,11 @@ export const metadata = {
   title: "Terms of Service",
   description:
     "The terms that apply when you use the AutomateUs website, tools, and content.",
-  alternates: { canonical: "https://automate-us.vercel.app/terms" },
+  alternates: { canonical: "https://automateus.net/terms" },
   openGraph: {
     title: "Terms of Service | AutomateUs",
     description: "The terms that apply when you use the AutomateUs website.",
-    url: "https://automate-us.vercel.app/terms",
+    url: "https://automateus.net/terms",
   },
 };
 
