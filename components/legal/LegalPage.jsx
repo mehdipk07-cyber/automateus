@@ -5,7 +5,7 @@ import { SectionBadge } from "@/components/ui/section-badge";
 export const LEGAL = {
   business: "AutomateUs",
   site: "automateus.net",
-  email: "alihassankhaliq20@gmail.com",
+  email: "hassan@automateus.net",
   jurisdiction: "Pakistan",
   effective: "October 23, 2026",
 };

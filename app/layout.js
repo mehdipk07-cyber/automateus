@@ -95,7 +95,7 @@ const organizationSchema = {
   logo: "https://automateus.net/logo-automateus.png",
   description:
     "AutomateUs helps businesses eliminate repetitive tasks and streamline operations through custom automation solutions using Make.com, Zapier, Monday.com, and AI.",
-  email: "alihassankhaliq20@gmail.com",
+  email: "hassan@automateus.net",
   telephone: "+923049814394",
   sameAs: [],
   serviceType: "Business Process Automation",

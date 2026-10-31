@@ -84,8 +84,8 @@ export default function ContactSidebar() {
       <CopyItem
         icon={Mail}
         label="Email"
-        value="alihassankhaliq20@gmail.com"
-        href="mailto:alihassankhaliq20@gmail.com"
+        value="hassan@automateus.net"
+        href="mailto:hassan@automateus.net"
       />
       <CopyItem
         icon={Phone}
