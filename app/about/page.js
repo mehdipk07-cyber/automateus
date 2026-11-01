@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
 export const metadata = {
-  title: "About | AutomateUs Automation Agency",
+  title: "About Us | Custom Automation Agency",
   description:
     "Learn about AutomateUs — our mission, values, and why hundreds of businesses trust us to build their automation systems.",
   keywords: [

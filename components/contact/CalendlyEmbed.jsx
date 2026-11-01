@@ -5,7 +5,10 @@ import Script from "next/script";
 
 export const CALENDLY_URL = "https://calendly.com/automate_us/30min";
 
-// Theme params so the widget matches the dark site palette
+// Theme params so the widget matches the dark site palette:
+// card navy background, warm-white text, sandy-clay buttons/selected dates.
+// The logo shown in the widget comes from Calendly's Branding settings —
+// upload public/logo-automateus-light.png there so it's visible on navy.
 const EMBED_URL = `${CALENDLY_URL}?hide_gdpr_banner=1&background_color=101C2C&text_color=F5F2ED&primary_color=E1B07E`;
 
 export default function CalendlyEmbed() {
@@ -24,7 +27,7 @@ export default function CalendlyEmbed() {
     <div
       className="rounded-2xl overflow-hidden"
       style={{
-        background: "var(--surface-800)",
+        background: "var(--navy-card)",
         border: "1px solid rgba(255,255,255,0.07)",
       }}
     >

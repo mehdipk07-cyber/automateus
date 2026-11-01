@@ -10,7 +10,7 @@ import FAQ from "@/components/home/FAQ";
 import FinalCTA from "@/components/home/FinalCTA";
 
 export const metadata = {
-  title: "AutomateUs | Automate Repetitive Work. Scale Faster.",
+  title: "AutomateUs | Business Automation Agency — Make, Zapier & AI",
   description:
     "AutomateUs builds custom automations that eliminate manual tasks, reduce operational costs, and help your team focus on high-value work.",
   keywords: [
@@ -25,7 +25,7 @@ export const metadata = {
   ],
   alternates: { canonical: "https://automateus.net" },
   openGraph: {
-    title: "AutomateUs | Automate Repetitive Work. Scale Faster.",
+    title: "AutomateUs | Business Automation Agency — Make, Zapier & AI",
     description:
       "AutomateUs builds custom automations that eliminate manual tasks, reduce operational costs, and help your team focus on high-value work.",
     url: "https://automateus.net",
@@ -33,7 +33,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AutomateUs | Automate Repetitive Work. Scale Faster.",
+    title: "AutomateUs | Business Automation Agency — Make, Zapier & AI",
     description: "AutomateUs builds custom automations that eliminate manual tasks, reduce operational costs, and help your team focus on high-value work.",
     images: ["/logo-automateus.png"],
   },

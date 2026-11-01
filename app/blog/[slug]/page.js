@@ -16,7 +16,7 @@ export async function generateMetadata({ params }) {
   if (!post) return {};
 
   return {
-    title: `${post.title} | AutomateUs Blog`,
+    title: post.title,
     description: post.description,
     keywords: post.keywords,
     authors: [{ name: post.author.name }],
