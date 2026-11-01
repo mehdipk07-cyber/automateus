@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import Script from "next/script";
 
-export const CALENDLY_URL = "https://calendly.com/hassan-automateus/30min";
+export const CALENDLY_URL = "https://calendly.com/automate_us/30min";
 
 // Theme params so the widget matches the dark site palette
 const EMBED_URL = `${CALENDLY_URL}?hide_gdpr_banner=1&background_color=101C2C&text_color=F5F2ED&primary_color=E1B07E`;
